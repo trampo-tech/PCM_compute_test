@@ -1,0 +1,237 @@
+!!python/object/new:openpoints.utils.config.EasyConfig
+dictitems:
+  batch_size: 2
+  cfg_basename: PCM
+  ckpt_dir: log/s3dis/s3dis-train-PCM-ngpus1-20260827-020346-9RxWmqLJCHwaZ79QDizFwu/checkpoint
+  cls_weighed_loss: false
+  criterion_args: !!python/object/new:openpoints.utils.config.EasyConfig
+    dictitems:
+      NAME: CrossEntropy
+      label_smoothing: 0.2
+  dataloader: !!python/object/new:openpoints.utils.config.EasyConfig
+    dictitems:
+      num_workers: 6
+  dataset: !!python/object/new:openpoints.utils.config.EasyConfig
+    dictitems:
+      common: !!python/object/new:openpoints.utils.config.EasyConfig
+        dictitems:
+          NAME: S3DIS
+          data_root: data/S3DIS/s3disfull
+          test_area: 5
+          voxel_size: 0.04
+      test: !!python/object/new:openpoints.utils.config.EasyConfig
+        dictitems:
+          presample: false
+          split: test
+          voxel_max: null
+      train: !!python/object/new:openpoints.utils.config.EasyConfig
+        dictitems:
+          loop: 30
+          presample: false
+          split: train
+          voxel_max: 12288
+      val: !!python/object/new:openpoints.utils.config.EasyConfig
+        dictitems:
+          presample: true
+          split: val
+          voxel_max: null
+  datatransforms: !!python/object/new:openpoints.utils.config.EasyConfig
+    dictitems:
+      kwargs: !!python/object/new:openpoints.utils.config.EasyConfig
+        dictitems:
+          angle:
+          - 0
+          - 0
+          - 1
+          color_drop: 0.2
+          gravity_dim: 2
+          jitter_clip: 0.02
+          jitter_sigma: 0.005
+          scale:
+          - 0.9
+          - 1.1
+      train:
+      - ChromaticAutoContrast
+      - PointsToTensor
+      - PointCloudScaling
+      - PointCloudXYZAlign
+      - PointCloudRotation
+      - PointCloudJitter
+      - ChromaticDropGPU
+      - ChromaticNormalize
+      val:
+      - PointsToTensor
+      - PointCloudXYZAlign
+      - ChromaticNormalize
+      vote:
+      - ChromaticDropGPU
+  deterministic: false
+  dist_backend: nccl
+  dist_url: tcp://localhost:8888
+  distributed: false
+  epoch: 0
+  epochs: 2
+  exp_dir: log/s3dis/s3dis-train-PCM-ngpus1-20260827-020346-9RxWmqLJCHwaZ79QDizFwu
+  feature_keys: x,heights
+  finetune: false
+  grad_norm_clip: 10
+  ignore_index: null
+  is_training: true
+  launcher: mp
+  layer_decay: 0
+  load_path: null
+  local_rank: 0
+  log_dir: log/s3dis/s3dis-train-PCM-ngpus1-20260827-020346-9RxWmqLJCHwaZ79QDizFwu
+  log_path: log/s3dis/s3dis-train-PCM-ngpus1-20260827-020346-9RxWmqLJCHwaZ79QDizFwu/s3dis-train-PCM-ngpus1-20260827-020346-9RxWmqLJCHwaZ79QDizFwu.log
+  logname: null
+  lr: 0.0001
+  min_lr: 1.0e-05
+  mode: train
+  model: !!python/object/new:openpoints.utils.config.EasyConfig
+    dictitems:
+      NAME: BaseSeg
+      cls_args: !!python/object/new:openpoints.utils.config.EasyConfig
+        dictitems:
+          NAME: SegHead
+          global_feat: max,avg
+          in_channels: null
+          norm_args: !!python/object/new:openpoints.utils.config.EasyConfig
+            dictitems:
+              norm: bn
+          num_classes: 13
+      decoder_args: !!python/object/new:openpoints.utils.config.EasyConfig
+        dictitems:
+          NAME: PointMambaDecoder
+          decoder_blocks:
+          - 1
+          - 1
+          - 1
+          - 1
+          decoder_channel_list:
+          - 384
+          - 192
+          - 96
+          - 96
+          encoder_channel_list:
+          - 96
+          - 96
+          - 192
+          - 384
+          - 768
+          mamba_blocks:
+          - 0
+          - 0
+          - 0
+          - 0
+          mamba_layers_orders: []
+      encoder_args: !!python/object/new:openpoints.utils.config.EasyConfig
+        dictitems:
+          NAME: PointMambaEncoder
+          activation: relu
+          bias: false
+          bimamba_type: v2
+          combine_pos: true
+          dim_expansion:
+          - 1
+          - 2
+          - 2
+          - 2
+          drop_path_rate: 0.1
+          embed_dim: 96
+          fused_add_norm: true
+          grid_size: 0.04
+          groups: 1
+          in_channels: 7
+          k_neighbors:
+          - 12
+          - 12
+          - 12
+          - 12
+          mamba_blocks:
+          - 1
+          - 2
+          - 2
+          - 4
+          mamba_layers_orders:
+          - xyz
+          - xzy
+          - yxz
+          - yzx
+          - zxy
+          - zyx
+          - hilbert
+          - z
+          - z-trans
+          mamba_pos: true
+          normalize: anchor
+          pos_blocks:
+          - 0
+          - 0
+          - 0
+          - 0
+          pre_blocks:
+          - 1
+          - 1
+          - 1
+          - 1
+          prompt_num_per_order: 6
+          reducers:
+          - 4
+          - 4
+          - 2
+          - 2
+          res_expansion: 1.0
+          residual_in_fp32: true
+          rms_norm: true
+          use_order_prompt: true
+          use_windows: true
+          use_xyz: true
+          windows_size:
+          - 1024
+          - 512
+          - 256
+          - 128
+      test_crop: 24576
+  mp: false
+  multiprocessing_distributed: false
+  ngpus_per_node: 1
+  num_classes: 13
+  optimizer: !!python/object/new:openpoints.utils.config.EasyConfig
+    dictitems:
+      NAME: adamw
+      weight_decay: 0.05
+  opts: ''
+  pretrained_path: null
+  print_freq: 50
+  rank: 0
+  resume: false
+  root_dir: log/s3dis
+  run_dir: log/s3dis/s3dis-train-PCM-ngpus1-20260827-020346-9RxWmqLJCHwaZ79QDizFwu
+  run_name: s3dis-train-PCM-ngpus1-20260827-020346-9RxWmqLJCHwaZ79QDizFwu
+  save_freq: -1
+  sched: cosine
+  sched_on_epoch: true
+  seed: 4298
+  start_epoch: 1
+  step_per_update: 1
+  sync_bn: false
+  task_name: s3dis
+  test: false
+  use_amp: false
+  use_gpu: true
+  use_mask: false
+  use_voting: false
+  val_batch_size: 1
+  val_fn: validate
+  val_freq: 1
+  wandb: !!python/object/new:openpoints.utils.config.EasyConfig
+    dictitems:
+      project: PointNeXt-S3DIS
+      tags:
+      - s3dis
+      - train
+      - PCM
+      - ngpus1
+      use_wandb: false
+  warmup_epochs: 5
+  world_size: 1
