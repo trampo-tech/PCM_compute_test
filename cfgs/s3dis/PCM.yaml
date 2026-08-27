@@ -55,9 +55,9 @@ optimizer:
 warmup_epochs: 5
 min_lr: 1.0e-5
 
-batch_size: 4
+batch_size: 2
 dataloader:
-  num_workers: 8
+  num_workers: 6
 
 dataset:
   common:
@@ -67,6 +67,6 @@ dataset:
     voxel_size: 0.04
   train:
     split: train
-    voxel_max: 24576
+    voxel_max: 12288
     loop: 30  # here, the training has been looped 30 times. therefore, the training epochs do not need much.
     presample: False

@@ -1,0 +1,12 @@
+data/
+data_*
+*.pth
+*.pt
+*.pkl
+log/
+wandb/
+.git/
+__pycache__/
+*.so
+build/
+dist/
