@@ -1,0 +1,126 @@
+{
+  "status": "finalized",
+  "final_evaluation": [
+    "Area_3"
+  ],
+  "training_areas": [
+    "Area_1",
+    "Area_2",
+    "Area_4"
+  ],
+  "rule": "Validation points >= threshold; training points < threshold on selected axis. Only centers at least 2 source units from boundary are eligible. Apply center jitter BEFORE checking eligibility. Query only the assigned partition. Fit any data-derived statistics on training partition only.",
+  "regions": [
+    {
+      "area": "Area_1",
+      "axis": "y",
+      "threshold": 59.361000061035156,
+      "buffer_radius": 2.0,
+      "training_point_counts": [
+        5232,
+        215790,
+        25423,
+        114863,
+        0
+      ],
+      "validation_point_counts": [
+        3076,
+        66628,
+        7935,
+        12694,
+        0
+      ],
+      "eligible_training_centers": 332100,
+      "eligible_validation_centers": 56734,
+      "eligible_training_center_class_counts": [
+        4337,
+        198591,
+        22018,
+        107154,
+        0
+      ],
+      "eligible_validation_center_class_counts": [
+        2097,
+        45273,
+        3380,
+        5984,
+        0
+      ]
+    },
+    {
+      "area": "Area_2",
+      "axis": "y",
+      "threshold": 2736.47265625,
+      "buffer_radius": 2.0,
+      "training_point_counts": [
+        25694,
+        43076,
+        369,
+        67996,
+        67588
+      ],
+      "validation_point_counts": [
+        8873,
+        108885,
+        2182,
+        56775,
+        28012
+      ],
+      "eligible_training_centers": 130317,
+      "eligible_validation_centers": 127829,
+      "eligible_training_center_class_counts": [
+        20903,
+        29201,
+        369,
+        44912,
+        34932
+      ],
+      "eligible_validation_center_class_counts": [
+        4071,
+        89625,
+        792,
+        32426,
+        915
+      ]
+    },
+    {
+      "area": "Area_4",
+      "axis": "x",
+      "threshold": 8.55334701538086,
+      "buffer_radius": 2.0,
+      "training_point_counts": [
+        3677,
+        25679,
+        7097,
+        50848,
+        0
+      ],
+      "validation_point_counts": [
+        2746,
+        13353,
+        3187,
+        38915,
+        0
+      ],
+      "eligible_training_centers": 61334,
+      "eligible_validation_centers": 42686,
+      "eligible_training_center_class_counts": [
+        2566,
+        18762,
+        3725,
+        36281,
+        0
+      ],
+      "eligible_validation_center_class_counts": [
+        1673,
+        9322,
+        3187,
+        28504,
+        0
+      ]
+    }
+  ],
+  "selection": "Fixed spatial boundaries selected for class coverage using Areas 1, 2 and 4 only.",
+  "version": "psnet5-spatial-v1",
+  "evaluation_protocol": "Development: spatial training/validation partitions in Areas 1, 2 and 4. Final benchmark: retrain on all of Areas 1, 2 and 4 and evaluate once on Area 3.",
+  "separation": "Point-disjoint spatial split, not an instance-disjoint split. Partition raw points before voxelization; restrict radius queries to partition and check jittered centers against boundary."
+}

@@ -1,0 +1,223 @@
+{
+  "seed": 20260912,
+  "data_root": "/home/blau/projects/pcm-psnet5-project/ResPointNet2/data/PSNet/PSNet5",
+  "classes": [
+    "ibeam",
+    "pipe",
+    "pump",
+    "rectangularbeam",
+    "tank"
+  ],
+  "units": "Not independently confirmed; baseline assumes meters.",
+  "areas": [
+    {
+      "area": "Area_1",
+      "raw_counts": [
+        359610,
+        22799721,
+        1478449,
+        5821433,
+        0
+      ],
+      "subsampled_counts": [
+        8308,
+        282418,
+        33358,
+        127557,
+        0
+      ],
+      "raw_cache_exact_match": true,
+      "kdtree_exact_match": true,
+      "xyz_bounds": [
+        [
+          46.72999954223633,
+          25.090999603271484,
+          -1.784999966621399
+        ],
+        [
+          78.87899780273438,
+          68.49299621582031,
+          4.164999961853027
+        ]
+      ],
+      "subsampled_rgb_range": [
+        0.0,
+        0.9215686321258545
+      ],
+      "sampling": {
+        "n": 200,
+        "neighbors_min_median_max": [
+          1.0,
+          5053.0,
+          13296.0
+        ],
+        "padding_fraction": 1.0,
+        "truncation_fraction": 0.0,
+        "class_presence_fraction": [
+          0.105,
+          0.8,
+          0.145,
+          0.555,
+          0.0
+        ]
+      }
+    },
+    {
+      "area": "Area_2",
+      "raw_counts": [
+        467782,
+        5712622,
+        279617,
+        2488327,
+        5455825
+      ],
+      "subsampled_counts": [
+        34567,
+        151961,
+        2551,
+        124771,
+        95600
+      ],
+      "raw_cache_exact_match": true,
+      "kdtree_exact_match": true,
+      "xyz_bounds": [
+        [
+          2716.98095703125,
+          2721.3740234375,
+          78.80500030517578
+        ],
+        [
+          2740.654052734375,
+          2747.4609375,
+          107.35399627685547
+        ]
+      ],
+      "subsampled_rgb_range": [
+        0.0,
+        1.0
+      ],
+      "sampling": {
+        "n": 200,
+        "neighbors_min_median_max": [
+          235.0,
+          4913.5,
+          16313.0
+        ],
+        "padding_fraction": 0.995,
+        "truncation_fraction": 0.005,
+        "class_presence_fraction": [
+          0.29,
+          0.66,
+          0.04,
+          0.42,
+          0.235
+        ]
+      }
+    },
+    {
+      "area": "Area_3",
+      "raw_counts": [
+        3023003,
+        8408907,
+        2455212,
+        9055639,
+        1523331
+      ],
+      "subsampled_counts": [
+        52544,
+        163071,
+        62375,
+        201612,
+        53035
+      ],
+      "raw_cache_exact_match": true,
+      "kdtree_exact_match": true,
+      "xyz_bounds": [
+        [
+          150.031005859375,
+          72.71299743652344,
+          -1.3980000019073486
+        ],
+        [
+          185.3990020751953,
+          114.68800354003906,
+          8.234000205993652
+        ]
+      ],
+      "subsampled_rgb_range": [
+        0.0,
+        1.0
+      ],
+      "sampling": {
+        "n": 200,
+        "neighbors_min_median_max": [
+          354.0,
+          2979.5,
+          12521.0
+        ],
+        "padding_fraction": 1.0,
+        "truncation_fraction": 0.0,
+        "class_presence_fraction": [
+          0.31,
+          0.71,
+          0.17,
+          0.41,
+          0.06
+        ]
+      }
+    },
+    {
+      "area": "Area_4",
+      "raw_counts": [
+        656071,
+        3052706,
+        836554,
+        7040629,
+        0
+      ],
+      "subsampled_counts": [
+        6423,
+        39032,
+        10284,
+        89763,
+        0
+      ],
+      "raw_cache_exact_match": true,
+      "kdtree_exact_match": true,
+      "xyz_bounds": [
+        [
+          -3.013000011444092,
+          -3.4860000610351562,
+          -0.925000011920929
+        ],
+        [
+          16.992000579833984,
+          13.444999694824219,
+          4.464000225067139
+        ]
+      ],
+      "subsampled_rgb_range": [
+        0.0,
+        1.0
+      ],
+      "sampling": {
+        "n": 200,
+        "neighbors_min_median_max": [
+          281.0,
+          3295.5,
+          9741.0
+        ],
+        "padding_fraction": 1.0,
+        "truncation_fraction": 0.0,
+        "class_presence_fraction": [
+          0.12,
+          0.7,
+          0.115,
+          0.75,
+          0.0
+        ]
+      }
+    }
+  ],
+  "issues": []
+}

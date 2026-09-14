@@ -1,0 +1,326 @@
+[
+  {
+    "file": "Area_1/Room_1/Annotations/ibeam_chiller.txt",
+    "bytes": 10323426,
+    "points": 359610,
+    "class": "ibeam",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      53.954,
+      49.153,
+      2.755
+    ],
+    "xyz_max": [
+      60.709,
+      65.535,
+      3.189
+    ]
+  },
+  {
+    "file": "Area_1/Room_1/Annotations/pipe_chiller.txt",
+    "bytes": 631083008,
+    "points": 22799721,
+    "class": "pipe",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      46.73,
+      26.216,
+      -1.785
+    ],
+    "xyz_max": [
+      78.879,
+      68.493,
+      4.165
+    ]
+  },
+  {
+    "file": "Area_1/Room_1/Annotations/pump_chiller.txt",
+    "bytes": 44080137,
+    "points": 1478449,
+    "class": "pump",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      49.061,
+      29.698,
+      -1.54
+    ],
+    "xyz_max": [
+      77.6,
+      67.49,
+      -0.001
+    ]
+  },
+  {
+    "file": "Area_1/Room_1/Annotations/rectangularbeam_chiller.txt",
+    "bytes": 171785396,
+    "points": 5821433,
+    "class": "rectangularbeam",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      49.153,
+      25.091,
+      2.894
+    ],
+    "xyz_max": [
+      67.078,
+      63.939,
+      4.102
+    ]
+  },
+  {
+    "file": "Area_2/Room_1/Annotations/ibeam_OSCG.txt",
+    "bytes": 16736707,
+    "points": 467782,
+    "class": "ibeam",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      2718.537,
+      2721.374,
+      78.805
+    ],
+    "xyz_max": [
+      2738.347,
+      2741.953,
+      107.354
+    ]
+  },
+  {
+    "file": "Area_2/Room_1/Annotations/pipe_OSCG.txt",
+    "bytes": 196692079,
+    "points": 5712622,
+    "class": "pipe",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      2719.344,
+      2727.029,
+      80.707
+    ],
+    "xyz_max": [
+      2740.502,
+      2747.461,
+      101.741
+    ]
+  },
+  {
+    "file": "Area_2/Room_1/Annotations/pump_OSCG.txt",
+    "bytes": 9508060,
+    "points": 279617,
+    "class": "pump",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      2735.947,
+      2732.8,
+      93.214
+    ],
+    "xyz_max": [
+      2740.654,
+      2739.93,
+      99.669
+    ]
+  },
+  {
+    "file": "Area_2/Room_1/Annotations/rectangularbeam_OSCG.txt",
+    "bytes": 92156522,
+    "points": 2488327,
+    "class": "rectangularbeam",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      2716.981,
+      2726.48,
+      79.686
+    ],
+    "xyz_max": [
+      2737.189,
+      2747.08,
+      105.463
+    ]
+  },
+  {
+    "file": "Area_2/Room_1/Annotations/tank_OSCG.txt",
+    "bytes": 199061793,
+    "points": 5455825,
+    "class": "tank",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      2726.371,
+      2729.316,
+      84.879
+    ],
+    "xyz_max": [
+      2736.016,
+      2738.684,
+      94.656
+    ]
+  },
+  {
+    "file": "Area_3/Room_1/Annotations/ibeam_SPH.txt",
+    "bytes": 94776211,
+    "points": 3023003,
+    "class": "ibeam",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      154.516,
+      74.802,
+      1.799
+    ],
+    "xyz_max": [
+      182.382,
+      114.325,
+      8.201
+    ]
+  },
+  {
+    "file": "Area_3/Room_1/Annotations/pipe_SPH.txt",
+    "bytes": 261036030,
+    "points": 8408907,
+    "class": "pipe",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      150.262,
+      74.511,
+      -1.398
+    ],
+    "xyz_max": [
+      185.399,
+      114.688,
+      8.192
+    ]
+  },
+  {
+    "file": "Area_3/Room_1/Annotations/pump_SPH.txt",
+    "bytes": 78996643,
+    "points": 2455212,
+    "class": "pump",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      152.578,
+      80.874,
+      -1.341
+    ],
+    "xyz_max": [
+      175.899,
+      107.678,
+      -0.001
+    ]
+  },
+  {
+    "file": "Area_3/Room_1/Annotations/rectangularbeam_SPH.txt",
+    "bytes": 290540093,
+    "points": 9055639,
+    "class": "rectangularbeam",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      150.031,
+      72.713,
+      1.431
+    ],
+    "xyz_max": [
+      184.569,
+      113.093,
+      8.234
+    ]
+  },
+  {
+    "file": "Area_3/Room_1/Annotations/tank_SPH.txt",
+    "bytes": 48360792,
+    "points": 1523331,
+    "class": "tank",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      168.805,
+      97.108,
+      -1.374
+    ],
+    "xyz_max": [
+      177.488,
+      102.475,
+      3.796
+    ]
+  },
+  {
+    "file": "Area_4/Room_1/Annotations/ibeam_WRT2.txt",
+    "bytes": 17603323,
+    "points": 656071,
+    "class": "ibeam",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      1.751,
+      1.628,
+      3.376
+    ],
+    "xyz_max": [
+      13.103,
+      3.659,
+      3.997
+    ]
+  },
+  {
+    "file": "Area_4/Room_1/Annotations/pipe_WRT2.txt",
+    "bytes": 85921349,
+    "points": 3052706,
+    "class": "pipe",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      -3.013,
+      -2.753,
+      -0.904
+    ],
+    "xyz_max": [
+      16.992,
+      12.141,
+      4.177
+    ]
+  },
+  {
+    "file": "Area_4/Room_1/Annotations/pump_WRT2.txt",
+    "bytes": 23468454,
+    "points": 836554,
+    "class": "pump",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      3.425,
+      1.768,
+      -0.925
+    ],
+    "xyz_max": [
+      11.356,
+      4.263,
+      0.012
+    ]
+  },
+  {
+    "file": "Area_4/Room_1/Annotations/rectangularbeam_WRT2.txt",
+    "bytes": 206921296,
+    "points": 7040629,
+    "class": "rectangularbeam",
+    "invalid_rows": 0,
+    "invalid_rgb_rows": 0,
+    "xyz_min": [
+      -1.508,
+      -3.486,
+      3.4
+    ],
+    "xyz_max": [
+      16.672,
+      13.445,
+      4.464
+    ]
+  }
+]

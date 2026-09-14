@@ -1,0 +1,62 @@
+{
+  "version": "psnet5-spatial-v1",
+  "regions": [
+    {
+      "area": "Area_1",
+      "raw_training_counts": [
+        295210,
+        16582252,
+        1056614,
+        5541147,
+        0
+      ],
+      "raw_validation_counts": [
+        64400,
+        6217469,
+        421835,
+        280286,
+        0
+      ],
+      "raw_points": 30459213,
+      "checks": "raw mask round-trip, exhaustive ownership and eligible-center class coverage passed"
+    },
+    {
+      "area": "Area_2",
+      "raw_training_counts": [
+        304632,
+        2255585,
+        12413,
+        1249360,
+        3599401
+      ],
+      "raw_validation_counts": [
+        163150,
+        3457037,
+        267204,
+        1238967,
+        1856424
+      ],
+      "raw_points": 14404173,
+      "checks": "raw mask round-trip, exhaustive ownership and eligible-center class coverage passed"
+    },
+    {
+      "area": "Area_4",
+      "raw_training_counts": [
+        404153,
+        1979841,
+        658141,
+        4112645,
+        0
+      ],
+      "raw_validation_counts": [
+        251918,
+        1072865,
+        178413,
+        2927984,
+        0
+      ],
+      "raw_points": 11585960,
+      "checks": "raw mask round-trip, exhaustive ownership and eligible-center class coverage passed"
+    }
+  ]
+}

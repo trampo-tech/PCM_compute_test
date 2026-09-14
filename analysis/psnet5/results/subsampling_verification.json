@@ -1,0 +1,30 @@
+[
+  {
+    "area": "Area_1",
+    "point_count_match": true,
+    "xyz_exact_match": true,
+    "rgb_exact_match": true,
+    "labels_exact_match": true
+  },
+  {
+    "area": "Area_2",
+    "point_count_match": true,
+    "xyz_exact_match": true,
+    "rgb_exact_match": true,
+    "labels_exact_match": true
+  },
+  {
+    "area": "Area_3",
+    "point_count_match": true,
+    "xyz_exact_match": true,
+    "rgb_exact_match": true,
+    "labels_exact_match": true
+  },
+  {
+    "area": "Area_4",
+    "point_count_match": true,
+    "xyz_exact_match": true,
+    "rgb_exact_match": true,
+    "labels_exact_match": true
+  }
+]
