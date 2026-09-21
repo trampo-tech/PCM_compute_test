@@ -65,16 +65,20 @@ class SmoothCrossEntropy(torch.nn.Module):
 
 @LOSS.register_module()
 class MaskedCrossEntropy(torch.nn.Module):
-    def __init__(self, label_smoothing=0.2):
+    def __init__(self, label_smoothing=0.2, weight=None, **kwargs):
         super(MaskedCrossEntropy, self).__init__()
-        self.creterion = CrossEntropyLoss(label_smoothing=label_smoothing)
+        if weight is not None and not torch.is_tensor(weight):
+            weight = torch.as_tensor(weight, dtype=torch.float32)
+        self.criterion = CrossEntropyLoss(label_smoothing=label_smoothing, weight=weight)
         
     def forward(self, logit, target, mask):
         logit = logit.transpose(1, 2).reshape(-1, logit.shape[1])
         target = target.flatten()
         mask = mask.flatten()
         idx = mask == 1
-        loss = self.creterion(logit[idx], target[idx])
+        if not torch.any(idx):
+            raise ValueError('MaskedCrossEntropy received a batch with no valid points')
+        loss = self.criterion(logit[idx], target[idx])
         return loss
 
 @LOSS.register_module()

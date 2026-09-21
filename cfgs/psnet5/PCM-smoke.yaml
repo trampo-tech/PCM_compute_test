@@ -1,0 +1,66 @@
+# One-epoch end-to-end shakeout. It intentionally allows partial validation
+# coverage while reporting the exact covered fraction for every area.
+epochs: 1
+warmup_epochs: 0
+batch_size: 1
+val_batch_size: 1
+validation_require_full_coverage: false
+validation_min_coverage: 0.0
+dataloader:
+  num_workers: 2
+dataset:
+  common:
+    num_points: 4096
+  train:
+    num_steps: 8
+    num_epochs: 1
+  val:
+    num_steps: 16
+    num_epochs: 1
+
+model:
+  NAME: BaseSeg
+  test_crop: 4096
+  encoder_args:
+    NAME: PointMambaEncoder
+    in_channels: 7
+    embed_dim: 96
+    groups: 1
+    res_expansion: 1.0
+    activation: relu
+    bias: false
+    use_xyz: true
+    normalize: anchor
+    dim_expansion: [1, 2, 2, 2]
+    pre_blocks: [1, 1, 1, 1]
+    mamba_blocks: [1, 2, 2, 4]
+    pos_blocks: [0, 0, 0, 0]
+    k_neighbors: [12, 12, 12, 12]
+    reducers: [4, 4, 2, 2]
+    rms_norm: true
+    residual_in_fp32: true
+    fused_add_norm: true
+    bimamba_type: v2
+    drop_path_rate: 0.1
+    mamba_pos: true
+    mamba_layers_orders: [xyz, xzy, yxz, yzx, zxy, zyx, hilbert, z, z-trans]
+    use_order_prompt: true
+    prompt_num_per_order: 6
+    use_windows: true
+    windows_size: [1024, 512, 256, 128]
+    grid_size: 0.04
+    combine_pos: true
+  decoder_args:
+    NAME: PointMambaDecoder
+    encoder_channel_list: [96, 96, 192, 384, 768]
+    decoder_channel_list: [384, 192, 96, 96]
+    decoder_blocks: [1, 1, 1, 1]
+    mamba_blocks: [0, 0, 0, 0]
+    mamba_layers_orders: []
+  cls_args:
+    NAME: SegHead
+    global_feat: max,avg
+    num_classes: 5
+    in_channels: null
+    norm_args:
+      norm: bn
