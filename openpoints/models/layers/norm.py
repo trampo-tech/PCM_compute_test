@@ -6,6 +6,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch import nn
 import copy
+from contextlib import contextmanager
 from easydict import EasyDict as edict
 
 
@@ -54,8 +55,61 @@ class FastBatchNorm1d(nn.Module):
             raise ValueError("Non supported number of dimensions {}".format(x.dim()))
 
 
+class SingletonSafeBatchNorm1d(nn.BatchNorm1d):
+    """Use stored statistics only when training has one value per channel."""
+    def forward(self, x):
+        if self.training and x.numel() // x.shape[1] == 1:
+            return F.batch_norm(x, self.running_mean, self.running_var,
+                                self.weight, self.bias, False, 0.0, self.eps)
+        return super().forward(x)
+
+
+@contextmanager
+def batch_stats_for_eval(model):
+    """Use each input's BN statistics in eval without changing running buffers.
+
+    Call after ``model.eval()`` so dropout and other layers remain in eval mode.
+    The singleton-safe BN keeps its stored-statistics fallback for one-point
+    inputs, which cannot supply a batch variance.
+    """
+    modules = [(module, module.training, module.track_running_stats)
+               for module in model.modules()
+               if isinstance(module, nn.modules.batchnorm._BatchNorm)]
+    try:
+        for module, _, _ in modules:
+            module.track_running_stats = False
+            module.train()
+        yield
+    finally:
+        for module, training, track_running_stats in modules:
+            module.track_running_stats = track_running_stats
+            module.train(training)
+
+
+def replace_batch_norm_with_group_norm(model, max_groups=8):
+    """Replace pointwise BatchNorm modules with per-example GroupNorm."""
+    if max_groups < 1:
+        raise ValueError('max_groups must be positive')
+    for name, child in list(model.named_children()):
+        if isinstance(child, nn.modules.batchnorm._BatchNorm):
+            channels = child.num_features
+            group_limit = min(max_groups, max(1, channels // 2))
+            groups = next(count for count in range(group_limit, 0, -1)
+                          if channels % count == 0)
+            replacement = nn.GroupNorm(groups, channels, eps=child.eps,
+                                       affine=child.affine)
+            if child.affine:
+                with torch.no_grad():
+                    replacement.weight.copy_(child.weight)
+                    replacement.bias.copy_(child.bias)
+            setattr(model, name, replacement)
+        else:
+            replace_batch_norm_with_group_norm(child, max_groups)
+
+
 _NORM_LAYER = dict(
     bn1d=nn.BatchNorm1d,
+    safebn1d=SingletonSafeBatchNorm1d,
     bn2d=nn.BatchNorm2d,
     bn=nn.BatchNorm2d,
     in2d=nn.InstanceNorm2d, 

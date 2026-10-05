@@ -452,7 +452,9 @@ class PointMambaPartDecoder(nn.Module):
         self.gmp_map_list = nn.ModuleList()
         for en_dim in en_dims:
             self.gmp_map_list.append(ConvBNReLU1D(en_dim, gmp_dim, bias=bias, activation=act_args))
-        self.gmp_map_end = ConvBNReLU1D(gmp_dim * len(en_dims), gmp_dim, bias=bias, activation=act_args)
+        self.gmp_map_end = ConvBNReLU1D(
+            gmp_dim * len(en_dims), gmp_dim, bias=bias, activation=act_args,
+            allow_singleton=True)
         self.out_channels = out_channel + gmp_dim + cls_dim
 
     def serialize_func(self, p, x, x_res, order, layers_outputs=[]):
@@ -565,7 +567,9 @@ class PointMambaDecoder(nn.Module):
         self.gmp_map_list = nn.ModuleList()
         for en_dim in en_dims:
             self.gmp_map_list.append(ConvBNReLU1D(en_dim, gmp_dim, bias=bias, activation=act_args))
-        self.gmp_map_end = ConvBNReLU1D(gmp_dim * len(en_dims), gmp_dim, bias=bias, activation=act_args)
+        self.gmp_map_end = ConvBNReLU1D(
+            gmp_dim * len(en_dims), gmp_dim, bias=bias, activation=act_args,
+            allow_singleton=True)
         self.out_channels = out_channel + gmp_dim
 
     def serialize_func(self, p, x, x_res, order, layers_outputs=[]):

@@ -1,4 +1,4 @@
-from ..layers import furthest_point_sample
+from ..layers import furthest_point_sample, SingletonSafeBatchNorm1d
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -110,12 +110,14 @@ class LocalGrouper_withoutKNN(nn.Module):
         return new_xyz, new_points.unsqueeze(2), points_res
 
 class ConvBNReLU1D(nn.Module):
-    def __init__(self, in_channels, out_channels, kernel_size=1, bias=True, activation='relu'):
+    def __init__(self, in_channels, out_channels, kernel_size=1, bias=True, activation='relu',
+                 allow_singleton=True):
         super(ConvBNReLU1D, self).__init__()
         self.act = get_activation(activation)
+        norm = SingletonSafeBatchNorm1d(out_channels) if allow_singleton else nn.BatchNorm1d(out_channels)
         self.net = nn.Sequential(
             nn.Conv1d(in_channels=in_channels, out_channels=out_channels, kernel_size=kernel_size, bias=bias),
-            nn.BatchNorm1d(out_channels),
+            norm,
             self.act
         )
 
@@ -130,24 +132,24 @@ class ConvBNReLURes1D(nn.Module):
         self.net1 = nn.Sequential(
             nn.Conv1d(in_channels=channel, out_channels=int(channel * res_expansion),
                       kernel_size=kernel_size, groups=groups, bias=bias),
-            nn.BatchNorm1d(int(channel * res_expansion)),
+            SingletonSafeBatchNorm1d(int(channel * res_expansion)),
             self.act
         )
         if groups > 1:
             self.net2 = nn.Sequential(
                 nn.Conv1d(in_channels=int(channel * res_expansion), out_channels=channel,
                           kernel_size=kernel_size, groups=groups, bias=bias),
-                nn.BatchNorm1d(channel),
+                SingletonSafeBatchNorm1d(channel),
                 self.act,
                 nn.Conv1d(in_channels=channel, out_channels=channel,
                           kernel_size=kernel_size, bias=bias),
-                nn.BatchNorm1d(channel),
+                SingletonSafeBatchNorm1d(channel),
             )
         else:
             self.net2 = nn.Sequential(
                 nn.Conv1d(in_channels=int(channel * res_expansion), out_channels=channel,
                           kernel_size=kernel_size, bias=bias),
-                nn.BatchNorm1d(channel)
+                SingletonSafeBatchNorm1d(channel)
             )
 
     def forward(self, x):

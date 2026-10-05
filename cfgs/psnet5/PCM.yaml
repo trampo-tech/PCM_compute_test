@@ -1,5 +1,6 @@
 model:
   NAME: BaseSeg
+  norm_mode: batch
   test_crop: 15000
   encoder_args:
     NAME: PointMambaEncoder
@@ -43,4 +44,5 @@ model:
     num_classes: 5
     in_channels: null
     norm_args:
-      norm: bn
+      # Matches BatchNorm normally and uses running stats for a one-point sphere.
+      norm: safebn1d

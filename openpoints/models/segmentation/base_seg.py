@@ -8,6 +8,7 @@ import torch.nn as nn
 import logging
 from ..build import MODELS, build_model_from_cfg
 from ..layers import create_linearblock, create_convblock1d
+from ..layers.norm import replace_batch_norm_with_group_norm
 import numpy as np
 
 
@@ -18,6 +19,9 @@ class BaseSeg(nn.Module):
                  decoder_args=None,
                  cls_args=None,
                  test_crop=24000,
+                 mask_padding=False,
+                 norm_mode='batch',
+                 norm_groups=8,
                  **kwargs):
         super().__init__()
         self.encoder = build_model_from_cfg(encoder_args)
@@ -40,6 +44,10 @@ class BaseSeg(nn.Module):
             self.head = build_model_from_cfg(cls_args)
         else:
             self.head = None
+        if norm_mode == 'group':
+            replace_batch_norm_with_group_norm(self, max_groups=int(norm_groups))
+        elif norm_mode != 'batch':
+            raise ValueError(f'Unknown norm_mode: {norm_mode}')
         self.test_crop = test_crop
 
     def forward(self, data):

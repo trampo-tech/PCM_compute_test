@@ -44,6 +44,7 @@ datatransforms:
 
 epochs: 100
 val_freq: 1
+eval_bn_batch_stats: true
 # Development metrics are computed only on points reached by the fixed sphere
 # schedule. Coverage is logged per area and must remain above this floor.
 validation_require_full_coverage: false

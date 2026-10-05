@@ -5,6 +5,7 @@ If more than 1 GPU is provided, will launch multi processing distributed trainin
 if you only wana use 1 GPU, set `CUDA_VISIBLE_DEVICES` accordingly
 """
 import __init__
+from contextlib import nullcontext
 import argparse, yaml, os, logging, numpy as np, csv, wandb, glob
 from tqdm import tqdm
 import torch, torch.nn as nn
@@ -23,6 +24,7 @@ from openpoints.optim import build_optimizer_from_cfg
 from openpoints.scheduler import build_scheduler_from_cfg
 from openpoints.loss import build_criterion_from_cfg
 from openpoints.models import build_model_from_cfg
+from openpoints.models.layers.norm import batch_stats_for_eval
 import warnings
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -314,20 +316,27 @@ def main(gpu, cfg):
         # test
         load_checkpoint(model, pretrained_path=os.path.join(cfg.ckpt_dir, f'{cfg.run_name}_ckpt_best.pth'))
         cfg.csv_path = os.path.join(cfg.run_dir, cfg.run_name + f'.csv')
-        if 'sphere' in cfg.dataset.common.NAME.lower():
-            # TODO: 
+        sphere_validation = 'sphere' in cfg.dataset.common.NAME.lower()
+        if sphere_validation:
+            logging.info(
+                'Final sphere evaluation reuses the validation loader '
+                '(protocol=%s, split=%s).',
+                cfg.dataset.common.get('protocol', 'unspecified'),
+                val_loader.dataset.split)
             test_miou, test_macc, test_oa, test_ious, test_accs = validate_sphere(model, val_loader, cfg, epoch=epoch)
         else:
             data_list = generate_data_list(cfg)
             test_miou, test_macc, test_oa, test_ious, test_accs, _ = test(model, data_list, cfg)
+        final_split = 'validation' if sphere_validation else 'test'
         with np.printoptions(precision=2, suppress=True):
             logging.info(
-                f'Best ckpt @E{best_epoch},  test_oa {test_oa:.2f}, test_macc {test_macc:.2f}, test_miou {test_miou:.2f}, '
+                f'Best ckpt @E{best_epoch},  {final_split}_oa {test_oa:.2f}, '
+                f'{final_split}_macc {test_macc:.2f}, {final_split}_miou {test_miou:.2f}, '
                 f'\niou per cls is: {test_ious}')
         if writer is not None:
-            writer.add_scalar('test_miou', test_miou, epoch)
-            writer.add_scalar('test_macc', test_macc, epoch)
-            writer.add_scalar('test_oa', test_oa, epoch)
+            writer.add_scalar(f'{final_split}_miou', test_miou, epoch)
+            writer.add_scalar(f'{final_split}_macc', test_macc, epoch)
+            writer.add_scalar(f'{final_split}_oa', test_oa, epoch)
         write_to_csv(test_oa, test_macc, test_miou, test_ious, best_epoch, cfg, write_header=True)
         logging.info(f'save results in {cfg.csv_path}')
         if cfg.use_voting:
@@ -473,6 +482,7 @@ def validate_sphere(model, val_loader, cfg, num_votes=1, data_transform=None, ep
         raise RuntimeError('Sphere validation is intentionally single-process until keyed distributed reduction is implemented')
     model.eval()  # set model to eval mode
     cm = ConfusionMatrix(num_classes=cfg.num_classes, ignore_index=cfg.ignore_index)
+    reference_cm = ConfusionMatrix(num_classes=cfg.num_classes, ignore_index=cfg.ignore_index)
     if cfg.get('visualize', False):
         from openpoints.dataset.vis3d import write_obj
         cfg.vis_dir = os.path.join(cfg.run_dir, 'visualization')
@@ -491,7 +501,8 @@ def validate_sphere(model, val_loader, cfg, num_votes=1, data_transform=None, ep
         data['x'] = get_features_by_keys(data, cfg.feature_keys)
         data['epoch'] = epoch
         data['iter'] = total_iter 
-        logits = model(data)
+        with batch_stats_for_eval(model) if cfg.get('eval_bn_batch_stats', False) else nullcontext():
+            logits = model(data)
         add_sphere_votes(logit_sums, vote_counts, logits.float(), data['cloud_index'],
                          data['input_inds'], data['mask'])
 
@@ -507,9 +518,12 @@ def validate_sphere(model, val_loader, cfg, num_votes=1, data_transform=None, ep
         labels = torch.as_tensor(np.asarray(val_loader.dataset.clouds_points_labels[cloud_index]),
                                  device=device, dtype=torch.long).reshape(-1)
         raw_covered = covered[projection]
+        raw_predictions = averaged.argmax(dim=1)[projection]
+        reference_cm.update(raw_predictions, labels)
+        logging.info(f'Validation raw coverage {area}: {raw_covered.sum().item()}/{len(raw_covered)} '
+                     f'({raw_covered.float().mean().item():.2%})')
         if bool(raw_covered.any()):
-            predictions = averaged.argmax(dim=1)[projection[raw_covered]]
-            cm.update(predictions, labels[raw_covered])
+            cm.update(raw_predictions[raw_covered], labels[raw_covered])
     if cfg.get('validation_require_full_coverage', False) and any(value < 1.0 for value in coverage):
         formatted = ', '.join(f'{value:.2%}' for value in coverage)
         raise RuntimeError(f'Incomplete validation coverage ({formatted}); increase dataset.val.num_steps')
@@ -524,6 +538,9 @@ def validate_sphere(model, val_loader, cfg, num_votes=1, data_transform=None, ep
             'Validation metrics exclude raw points whose subsampled representatives '
             'received no votes; see the per-area coverage values above.')
     miou, macc, oa, ious, accs = cm.all_metrics()
+    reference_miou, _, _, _, _ = reference_cm.all_metrics()
+    logging.info('Reference PSNet5 full-raw mIoU %.2f; raw points without votes '
+                 'inherit zero logits and predict class 0.', reference_miou)
 
     if cfg.get('visualize', False):
         dataset_name = cfg.dataset.common.NAME.lower()

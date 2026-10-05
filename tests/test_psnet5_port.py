@@ -5,18 +5,38 @@ from pathlib import Path
 
 import numpy as np
 import torch
+import torch.nn as nn
 
 from openpoints.dataset.data_util import get_features_by_keys
 from openpoints.dataset.psnet5.preprocessing import load_raw_area
 from openpoints.dataset.psnet5.psnet5 import PSNet5Sphere
 from openpoints.dataset.psnet5.voting import add_sphere_votes, averaged_cloud_logits
 from openpoints.loss.build import MaskedCrossEntropy
+from openpoints.models.layers.norm import batch_stats_for_eval
 
 
 def _sha256(path):
     digest = hashlib.sha256()
     digest.update(path.read_bytes())
     return digest.hexdigest()
+
+
+def test_eval_batch_stats_preserves_running_buffers_and_dropout_mode():
+    model = nn.Sequential(nn.BatchNorm1d(3), nn.Dropout(p=0.9)).eval()
+    x = torch.arange(15, dtype=torch.float32).reshape(1, 3, 5)
+    bn = model[0]
+    before = (bn.running_mean.clone(), bn.running_var.clone(),
+              bn.num_batches_tracked.clone())
+    with batch_stats_for_eval(model):
+        actual = model(x)
+        assert not model[1].training
+    expected = torch.nn.functional.batch_norm(
+        x, None, None, bn.weight, bn.bias, True, 0.0, bn.eps)
+    torch.testing.assert_close(actual, expected)
+    assert not bn.training and bn.track_running_stats
+    for current, original in zip((bn.running_mean, bn.running_var,
+                                  bn.num_batches_tracked), before):
+        torch.testing.assert_close(current, original)
 
 
 def _fixture(tmp_path):
