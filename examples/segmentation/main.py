@@ -238,7 +238,13 @@ def main(gpu, cfg):
         scaler = None
 
     val_miou, val_macc, val_oa, val_ious, val_accs = 0., 0., 0., [], []
-    best_val, macc_when_best, oa_when_best, ious_when_best, best_epoch = 0., 0., 0., [], 0
+    best_val = float(cfg.get('resume_best_val', 0.0))
+    best_epoch = int(cfg.get('resume_best_epoch', 0))
+    if cfg.mode == 'resume' and best_val > 0 and best_epoch == 0:
+        best_path = os.path.join(cfg.ckpt_dir, f'{cfg.run_name}_ckpt_best.pth')
+        if os.path.isfile(best_path):
+            best_epoch = int(torch.load(best_path, map_location='cpu')['epoch'])
+    macc_when_best, oa_when_best, ious_when_best = float('nan'), float('nan'), []
     total_iter = 0
     for epoch in range(cfg.start_epoch, cfg.epochs + 1):
         if cfg.distributed:
@@ -254,7 +260,7 @@ def main(gpu, cfg):
         # example because a configured coverage floor is not met).
         if cfg.rank == 0:
             save_checkpoint(cfg, model, epoch, optimizer, scheduler,
-                            additioanl_dict={'best_val': best_val},
+                            additioanl_dict={'best_val': best_val, 'best_epoch': best_epoch},
                             is_best=False)
 
         is_best = False
@@ -289,7 +295,7 @@ def main(gpu, cfg):
 
         if cfg.rank == 0:
             save_checkpoint(cfg, model, epoch, optimizer, scheduler,
-                            additioanl_dict={'best_val': best_val},
+                            additioanl_dict={'best_val': best_val, 'best_epoch': best_epoch},
                             is_best=is_best
                             )
             is_best = False

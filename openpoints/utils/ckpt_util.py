@@ -98,6 +98,11 @@ def resume_checkpoint(config, model, optimizer=None, scheduler=None, pretrained_
 
     checkpoint = torch.load(pretrained_path, map_location='cpu')
     config.start_epoch = checkpoint['epoch'] + 1
+    # Keep checkpoint selection continuous across an interrupted training run.
+    # Otherwise the runner starts best_val at zero and may replace a better
+    # pre-interruption checkpoint with the first post-resume validation.
+    config.resume_best_val = float(checkpoint.get('best_val', 0.0))
+    config.resume_best_epoch = int(checkpoint.get('best_epoch', 0))
     if optimizer is not None:
         try:
             optimizer.load_state_dict(checkpoint['optimizer'])
