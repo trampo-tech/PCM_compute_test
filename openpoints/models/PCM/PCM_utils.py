@@ -147,24 +147,16 @@ def knn_point(nsample, xyz, new_xyz, training=True):
     Return:
         group_idx: grouped points index, [B, S, nsample]
     """
-    if training:
-        sqrdists = square_distance(new_xyz, xyz)
+    # A full [B, S, N] distance matrix, plus the [B, S, N, 3]
+    # broadcast in square_distance, can exceed GPU memory for 15K spheres.
+    # Each query is independent, so chunking preserves its KNN result.
+    chunk_size = 256 if training else 1024
+    idx_list = []
+    for start in range(0, new_xyz.shape[1], chunk_size):
+        sqrdists = square_distance(new_xyz[:, start:start + chunk_size], xyz)
         _, group_idx = torch.topk(sqrdists, nsample, dim=-1, largest=False, sorted=True)
-    else:
-        N = new_xyz.shape[1]
-        idx_list = []
-        n_splits = N // 1024
-        if n_splits * 1024 != N:
-            n_splits += 1
-        start, end = 0, 1024
-        for i in range(n_splits):
-            end = min(end, N)
-            sqrdists = square_distance(new_xyz[:, start: end], xyz)
-            _, group_idx = torch.topk(sqrdists, nsample, dim=-1, largest=False, sorted=True)
-            idx_list.append(group_idx)
-            start += 1024
-            end += 1024
-        group_idx = torch.cat(idx_list, dim=1)
+        idx_list.append(group_idx)
+    group_idx = torch.cat(idx_list, dim=1)
     return group_idx
 
 # https://github.com/huggingface/transformers/blob/c28d04e9e252a1a099944e325685f14d242ecdcd/src/transformers/models/gpt2/modeling_gpt2.py#L454
@@ -198,5 +190,4 @@ def _init_weights(
                 nn.init.kaiming_uniform_(p, a=math.sqrt(5))
                 with torch.no_grad():
                     p /= math.sqrt(n_residuals_per_layer * n_layer)
-
 

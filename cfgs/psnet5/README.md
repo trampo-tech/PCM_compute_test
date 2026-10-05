@@ -5,6 +5,11 @@ They partition raw Areas 1, 2, and 4 before 0.04 voxelization, use radius-2
 spheres, RGB plus absolute Z, mask padded points in loss and voting, and never
 read Area 3.
 
+PCM also compacts each sphere to valid points before encoding, so duplicated
+padding cannot influence grouping, Mamba context, decoding, or global pooling.
+See `analysis/psnet5/PADDING_INVESTIGATION.md` for the checkpoint diagnostic and
+its limitations.
+
 Build the CPU subsampling extension once in the same environment used for
 training:
 

@@ -12,7 +12,11 @@ from openpoints.dataset.psnet5.preprocessing import load_raw_area
 from openpoints.dataset.psnet5.psnet5 import PSNet5Sphere
 from openpoints.dataset.psnet5.voting import add_sphere_votes, averaged_cloud_logits
 from openpoints.loss.build import MaskedCrossEntropy
+from openpoints.models.PCM.PointMLP_layers import (
+    LocalGrouper, PointNetFeaturePropagation, PreExtraction)
+from openpoints.models.layers import SingletonSafeBatchNorm1d
 from openpoints.models.layers.norm import batch_stats_for_eval
+from openpoints.models.segmentation.base_seg import BaseSeg
 
 
 def _sha256(path):
@@ -116,3 +120,89 @@ def test_masked_loss_and_votes_ignore_padding():
     averaged, covered = averaged_cloud_logits(sums[0], counts[0])
     assert covered.tolist() == [True, True, False]
     assert torch.equal(averaged[:2], logits[0, :, :2].T)
+
+
+class _IdentityEncoder(nn.Module):
+    def forward_seg_feat(self, data):
+        return [data['pos']], [data['x']]
+
+
+class _GlobalContextDecoder(nn.Module):
+    """Toy decoder whose valid outputs are deliberately padding-sensitive."""
+    def forward(self, positions, features):
+        feature = features[0]
+        return feature + feature.mean(dim=-1, keepdim=True)
+
+
+def _toy_segmenter(mask_padding):
+    # Avoid the config registry here: this isolates BaseSeg's masking contract.
+    model = BaseSeg.__new__(BaseSeg)
+    nn.Module.__init__(model)
+    model.encoder = _IdentityEncoder()
+    model.decoder = _GlobalContextDecoder()
+    model.head = nn.Identity()
+    model.test_crop = 100
+    model.mask_padding = mask_padding
+    return model.eval()
+
+
+def test_mask_aware_model_is_invariant_to_padding_content_and_layout():
+    valid_pos = torch.tensor([[0., 0., 0.], [1., 0., 0.], [2., 0., 0.]])
+    valid_x = torch.tensor([[1., 2., 4.]])
+    variants = []
+    for valid_slots, padded_x in (([0, 1, 2], [10., 20.]), ([0, 2, 4], [-30., 50.])):
+        mask = torch.zeros(1, 5, dtype=torch.int64)
+        mask[0, valid_slots] = 1
+        pos = torch.full((1, 5, 3), 99.)
+        x = torch.tensor(padded_x + [0., 0., 0.]).reshape(1, 1, 5)
+        pos[0, valid_slots] = valid_pos
+        x[0, 0, valid_slots] = valid_x
+        variants.append({'pos': pos, 'x': x, 'mask': mask})
+
+    masked = _toy_segmenter(mask_padding=True)
+    first = masked(variants[0])[0, :, variants[0]['mask'][0].bool()]
+    second = masked(variants[1])[0, :, variants[1]['mask'][0].bool()]
+    assert torch.equal(first, second)
+    assert torch.count_nonzero(masked(variants[1])[0, :, ~variants[1]['mask'][0].bool()]) == 0
+
+    legacy = _toy_segmenter(mask_padding=False)
+    legacy_first = legacy(variants[0])[0, :, variants[0]['mask'][0].bool()]
+    legacy_second = legacy(variants[1])[0, :, variants[1]['mask'][0].bool()]
+    assert not torch.allclose(legacy_first, legacy_second)
+
+
+def test_singleton_safe_batch_norm_supports_compacted_training():
+    norm = SingletonSafeBatchNorm1d(3).train()
+    singleton = torch.randn(1, 3, 1, requires_grad=True)
+    output = norm(singleton)
+    output.sum().backward()
+    assert torch.isfinite(output).all()
+    assert singleton.grad is not None
+
+
+def test_pcm_grouping_and_extraction_accept_one_valid_point():
+    xyz = torch.tensor([[[1., 2., 3.]]])
+    features = torch.randn(1, 1, 4, requires_grad=True)
+    grouper = LocalGrouper(4, sample_ratio=4, kneighbors=12,
+                           use_xyz=True, normalize='anchor').train()
+    new_xyz, grouped, residual = grouper(xyz, features, None)
+    assert new_xyz.shape == (1, 1, 3)
+    assert grouped.shape == (1, 1, 1, 11)
+    assert residual is None
+
+    extracted = PreExtraction(4, 8, blocks=1, use_xyz=True).train()(grouped)
+    assert extracted.shape == (1, 8, 1)
+    assert torch.isfinite(extracted).all()
+    extracted.sum().backward()
+    assert features.grad is not None
+
+
+def test_feature_propagation_adapts_when_support_has_two_points():
+    propagation = PointNetFeaturePropagation(6, 5, blocks=0).eval()
+    dense_xyz = torch.randn(1, 4, 3)
+    sparse_xyz = torch.randn(1, 2, 3)
+    dense_features = torch.randn(1, 2, 4)
+    sparse_features = torch.randn(1, 4, 2)
+    output = propagation(dense_xyz, sparse_xyz, dense_features, sparse_features)
+    assert output.shape == (1, 5, 4)
+    assert torch.isfinite(output).all()

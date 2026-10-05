@@ -49,17 +49,65 @@ class BaseSeg(nn.Module):
         elif norm_mode != 'batch':
             raise ValueError(f'Unknown norm_mode: {norm_mode}')
         self.test_crop = test_crop
+        # Point-based encoders cannot generally make duplicated padding inert by
+        # zeroing its features: its coordinates still affect FPS/KNN and its
+        # tokens still affect sequence layers.  Opt-in compaction removes masked
+        # points before the complete model and scatters zero logits back into
+        # their original slots afterwards.
+        self.mask_padding = mask_padding
 
     def forward(self, data):
+        if self.mask_padding and data.get('mask') is not None:
+            return self.forward_masked(data)
         if not self.training:
             return self.forward_test(data, max_points=self.test_crop)
 
+        return self.forward_features(data)
+
+    def forward_features(self, data):
         p, f = self.encoder.forward_seg_feat(data)
         if self.decoder is not None:
-            f = self.decoder(p, f).squeeze(-1)
+            # Preserve the point dimension for a genuinely one-point compact
+            # sphere; squeeze(-1) turns [B, C, 1] into [B, C] and breaks the
+            # segmentation head's point-wise/global feature logic.
+            f = self.decoder(p, f)
         if self.head is not None:
             f = self.head(f)
         return f
+
+    def forward_masked(self, data):
+        """Run each example without its masked padding, then restore its shape."""
+        mask = data['mask'].bool()
+        if mask.ndim == 3 and mask.shape[-1] == 1:
+            mask = mask.squeeze(-1)
+        if mask.ndim != 2:
+            raise ValueError(f'Expected mask with shape [B, N], got {tuple(mask.shape)}')
+        if data['pos'].shape[:2] != mask.shape:
+            raise ValueError('mask and pos must have matching batch and point dimensions')
+        if bool(mask.all()):
+            if self.training:
+                return self.forward_features(data)
+            return self.forward_test(data, max_points=self.test_crop)
+
+        outputs = []
+        for batch_index, valid in enumerate(mask):
+            valid_index = valid.nonzero(as_tuple=False).squeeze(1)
+            if valid_index.numel() == 0:
+                raise ValueError('Every point-cloud example must contain at least one valid point')
+            compact = {'pos': data['pos'][batch_index:batch_index + 1, valid_index]}
+            if data.get('x') is not None:
+                compact['x'] = data['x'][batch_index:batch_index + 1, :, valid_index]
+            if self.training:
+                compact_output = self.forward_features(compact)
+            else:
+                compact_output = self.forward_test(compact, max_points=self.test_crop)
+            # index_copy is differentiable with respect to compact_output and
+            # supports masks whose valid points are not a contiguous prefix.
+            restored = compact_output.new_zeros(
+                compact_output.shape[0], compact_output.shape[1], mask.shape[1])
+            restored = restored.index_copy(2, valid_index, compact_output)
+            outputs.append(restored)
+        return torch.cat(outputs, dim=0)
 
     def pre_split(self, data, max_points):
         pre_split_dict = {2: [1, 2], 4: [2, 2], 6: [2, 3],
@@ -111,13 +159,9 @@ class BaseSeg(nn.Module):
         f_list = []
         for _data in data_lists:
             if 'data' in _data.keys():
-                p, f = self.encoder.forward_seg_feat(_data['data'])
+                f = self.forward_features(_data['data'])
             else:
-                p, f = self.encoder.forward_seg_feat(_data)
-            if self.decoder is not None:
-                f = self.decoder(p, f).squeeze(-1)
-            if self.head is not None:
-                f = self.head(f)
+                f = self.forward_features(_data)
             f_list.append(f)
 
         if len(f_list) == 1:

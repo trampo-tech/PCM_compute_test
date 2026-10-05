@@ -2,6 +2,8 @@ model:
   NAME: BaseSeg
   norm_mode: batch
   test_crop: 15000
+  # Remove duplicated sphere padding before FPS/KNN, Mamba, decoding and pooling.
+  mask_padding: true
   encoder_args:
     NAME: PointMambaEncoder
     in_channels: 7

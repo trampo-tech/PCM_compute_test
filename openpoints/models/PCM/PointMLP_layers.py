@@ -47,7 +47,9 @@ class LocalGrouper(nn.Module):
 
     def forward(self, xyz, points, points_res):
         B, N, C = xyz.shape
-        S = N // self.sample_ratio
+        if N == 0:
+            raise ValueError('LocalGrouper requires at least one point')
+        S = max(1, N // self.sample_ratio)
         xyz = xyz.contiguous()  # xyz [btach, points, xyz]
 
         if S == N:
@@ -61,7 +63,11 @@ class LocalGrouper(nn.Module):
             if points_res is not None:
                 points_res = index_points(points_res, fps_idx)
 
-        idx = knn_point(self.kneighbors, xyz, new_xyz, training=self.training)
+        # A compacted radius sphere can contain fewer points than the configured
+        # K (and successive reducers can take it down to one). Query every
+        # available neighbor rather than reintroducing masked input duplicates.
+        neighbor_count = min(self.kneighbors, N)
+        idx = knn_point(neighbor_count, xyz, new_xyz, training=self.training)
         idx = idx[:, :, ::self.k_stride]
         grouped_xyz = index_points(xyz, idx)  # [B, npoint, k, 3]
         grouped_points = index_points(points, idx)  # [B, npoint, k, d]
@@ -78,7 +84,9 @@ class LocalGrouper(nn.Module):
             grouped_points = (grouped_points - mean) / (std + 1e-5)
             grouped_points = self.affine_alpha * grouped_points + self.affine_beta
 
-        new_points = torch.cat([grouped_points, new_points.view(B, S, 1, -1).repeat(1, 1, self.kneighbors // self.k_stride, 1)], dim=-1)
+        grouped_count = idx.shape[-1]
+        anchors = new_points.view(B, S, 1, -1).expand(-1, -1, grouped_count, -1)
+        new_points = torch.cat([grouped_points, anchors], dim=-1)
         return new_xyz, new_points, points_res
 
 class LocalGrouper_withoutKNN(nn.Module):
@@ -92,7 +100,9 @@ class LocalGrouper_withoutKNN(nn.Module):
 
     def forward(self, xyz, points, points_res):
         B, N, C = xyz.shape
-        S = N // self.sample_ratio
+        if N == 0:
+            raise ValueError('LocalGrouper_withoutKNN requires at least one point')
+        S = max(1, N // self.sample_ratio)
         xyz = xyz.contiguous()  # xyz [btach, points, xyz]
 
         if S == N:
@@ -254,31 +264,31 @@ class PointNetFeaturePropagation(nn.Module):
         points2 = points2.permute(0, 2, 1)
         B, N, C = xyz1.shape
         _, S, _ = xyz2.shape
+        interpolation_neighbors = min(k, S)
 
         if S == 1:
             interpolated_points = points2.repeat(1, N, 1)
         else:
+            dists_list = []
+            idx_list = []
             if self.training:
-                dists = square_distance(xyz1, xyz2)
-                dists, idx = dists.sort(dim=-1)
-                dists, idx = dists[:, :, :3], idx[:, :, :3]  # [B, N, 3]
+                # Preserve the training sort/tie behavior while bounding the
+                # temporary pairwise distance matrix for dense 15K spheres.
+                for start in range(0, N, 256):
+                    chunk_dists = square_distance(xyz1[:, start:start + 256], xyz2)
+                    chunk_dists, chunk_idx = chunk_dists.sort(dim=-1)
+                    dists_list.append(chunk_dists[:, :, :interpolation_neighbors])
+                    idx_list.append(chunk_idx[:, :, :interpolation_neighbors])
             else:
-                dists_list = []
-                idx_list = []
-                n_splits = N // 1024
-                if n_splits * 1024 != N:
-                    n_splits += 1
-                start, end = 0, 1024
-                for i in range(n_splits):
-                    end = min(end, N)
-                    dists = square_distance(xyz1[:, start: end], xyz2)
-                    dists, idx = torch.topk(dists, k, dim=-1, largest=False, sorted=True)
-                    dists_list.append(dists)
-                    idx_list.append(idx)
-                    start += 1024
-                    end += 1024
-                dists = torch.cat(dists_list, dim=1)
-                idx = torch.cat(idx_list, dim=1)
+                for start in range(0, N, 1024):
+                    chunk_dists = square_distance(xyz1[:, start:start + 1024], xyz2)
+                    chunk_dists, chunk_idx = torch.topk(
+                        chunk_dists, interpolation_neighbors, dim=-1,
+                        largest=False, sorted=True)
+                    dists_list.append(chunk_dists)
+                    idx_list.append(chunk_idx)
+            dists = torch.cat(dists_list, dim=1)
+            idx = torch.cat(idx_list, dim=1)
 
             # dists, idx = dists.sort(dim=-1)
             # dists, idx = dists[:, :, :3], idx[:, :, :3]  # [B, N, 3]
@@ -287,7 +297,8 @@ class PointNetFeaturePropagation(nn.Module):
             norm = torch.sum(dist_recip, dim=2, keepdim=True)
             weight = dist_recip / norm
             # print(points2.shape, '  ', idx.shape)
-            interpolated_points = torch.sum(index_points(points2, idx) * weight.view(B, N, 3, 1), dim=2)
+            interpolated_points = torch.sum(
+                index_points(points2, idx) * weight.unsqueeze(-1), dim=2)
 
         if points1 is not None:
             points1 = points1.permute(0, 2, 1)

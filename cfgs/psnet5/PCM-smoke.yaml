@@ -22,6 +22,7 @@ model:
   NAME: BaseSeg
   norm_mode: batch
   test_crop: 4096
+  mask_padding: true
   encoder_args:
     NAME: PointMambaEncoder
     in_channels: 7

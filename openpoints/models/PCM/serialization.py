@@ -59,7 +59,10 @@ class Point(Dict):
 
         if depth is None:
             # Adaptive measure the depth of serialization cube (length = 2 ^ depth)
-            depth = int(self.grid_coord.max()).bit_length()
+            # Hilbert encoding cannot reshape a zero-bit code. A one-point (or
+            # coincident-point) compact cloud has max grid coordinate zero, so
+            # represent it with the smallest valid serialization cube.
+            depth = max(1, int(self.grid_coord.max()).bit_length())
         self["serialized_depth"] = depth
         # Maximum bit length for serialization code is 63 (int64)
         assert depth * 3 + len(self.offset).bit_length() <= 63
@@ -180,4 +183,3 @@ def z_order_encode(grid_coord: torch.Tensor, depth: int = 16):
 
 def hilbert_encode(grid_coord: torch.Tensor, depth: int = 16):
     return hilbert_encode_(grid_coord, num_dims=3, num_bits=depth)
-
