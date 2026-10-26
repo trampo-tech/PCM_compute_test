@@ -1,0 +1,187 @@
+{
+  "raw_points": 24466092,
+  "sub_points": 532423,
+  "original_sub_points": 532637,
+  "excluded_sub_points_without_raw_projection": 214,
+  "metrics": {
+    "best": {
+      "raw": {
+        "oa": 0.8508378452921701,
+        "miou": 0.692254399516212,
+        "iou": [
+          0.37755401485950096,
+          0.6963242180949432,
+          0.46018705703798063,
+          0.9785247548980193,
+          0.9486819526906164
+        ]
+      },
+      "subsampled": {
+        "oa": 0.8663806785206499,
+        "miou": 0.7194535131830886,
+        "iou": [
+          0.4994586098498079,
+          0.6807860765329645,
+          0.5210259728946026,
+          0.979603555145489,
+          0.9163933514925788
+        ]
+      }
+    },
+    "latest": {
+      "raw": {
+        "oa": 0.854442466741317,
+        "miou": 0.6762380031443046,
+        "iou": [
+          0.40268466631592964,
+          0.7540129585705984,
+          0.5272103492619822,
+          0.9179735049206695,
+          0.7793085366523435
+        ]
+      },
+      "subsampled": {
+        "oa": 0.880035235141983,
+        "miou": 0.7260034340080732,
+        "iou": [
+          0.5302620913266685,
+          0.749776641301334,
+          0.629042307551342,
+          0.9614140145844401,
+          0.7595221152765814
+        ]
+      }
+    }
+  },
+  "projection_oracle": {
+    "oa": 0.9996737116822744,
+    "miou": 0.9992268251157499,
+    "iou": [
+      0.9986778218834361,
+      0.9995264302567193,
+      0.9983918544498063,
+      0.9995583687953989,
+      0.9999796501933889
+    ]
+  },
+  "projection_oracle_error_fraction": 0.0003262883177256315,
+  "subsample_label_projection": {
+    "oa": 0.9996542153115422,
+    "miou": 0.9991794199181022,
+    "iou": [
+      0.9986239403960923,
+      0.9994891219353113,
+      0.9982640061659115,
+      0.9995403808998068,
+      0.9999796501933889
+    ]
+  },
+  "confusions": [
+    {
+      "true": "tank",
+      "predicted": "pump",
+      "raw_error_points": 220991,
+      "sub_error_points": 7018,
+      "median_other_class_distance_m": 1.80029137099132,
+      "fraction_farther_20cm": 1.0,
+      "median_votes": 14.0,
+      "median_neighbor17_distance_m": 0.0778188846879366,
+      "coarse_components": 7,
+      "top_component_sub_error_fraction": 0.8711883727557709
+    },
+    {
+      "true": "tank",
+      "predicted": "pipe",
+      "raw_error_points": 106195,
+      "sub_error_points": 4840,
+      "median_other_class_distance_m": 1.427393391271814,
+      "fraction_farther_20cm": 1.0,
+      "median_votes": 16.0,
+      "median_neighbor17_distance_m": 0.07849568312259476,
+      "coarse_components": 8,
+      "top_component_sub_error_fraction": 0.9650826446280992
+    },
+    {
+      "true": "ibeam",
+      "predicted": "rectangularbeam",
+      "raw_error_points": 692800,
+      "sub_error_points": 3691,
+      "median_other_class_distance_m": 0.6308224969599294,
+      "fraction_farther_20cm": 0.927661880249255,
+      "median_votes": 12.0,
+      "median_neighbor17_distance_m": 0.07867129453990164,
+      "coarse_components": 20,
+      "top_component_sub_error_fraction": 0.551341099972907
+    },
+    {
+      "true": "ibeam",
+      "predicted": "pipe",
+      "raw_error_points": 989231,
+      "sub_error_points": 16089,
+      "median_other_class_distance_m": 1.920509590996267,
+      "fraction_farther_20cm": 0.9871340667536826,
+      "median_votes": 12.0,
+      "median_neighbor17_distance_m": 0.07672372092409048,
+      "coarse_components": 14,
+      "top_component_sub_error_fraction": 0.2647150226863074
+    },
+    {
+      "true": "pump",
+      "predicted": "pipe",
+      "raw_error_points": 725961,
+      "sub_error_points": 10848,
+      "median_other_class_distance_m": 1.0293945573335943,
+      "fraction_farther_20cm": 0.9294800884955752,
+      "median_votes": 11.0,
+      "median_neighbor17_distance_m": 0.07113461190782941,
+      "coarse_components": 11,
+      "top_component_sub_error_fraction": 0.253226401179941
+    },
+    {
+      "true": "pipe",
+      "predicted": "pump",
+      "raw_error_points": 553719,
+      "sub_error_points": 11139,
+      "median_other_class_distance_m": 1.3003801154724834,
+      "fraction_farther_20cm": 0.9437112846754646,
+      "median_votes": 13.0,
+      "median_neighbor17_distance_m": 0.0763658644839436,
+      "coarse_components": 43,
+      "top_component_sub_error_fraction": 0.1282879971272107
+    }
+  ],
+  "sampling_diagnostic_keys": [
+    "class_sampling_ratio",
+    "class_order",
+    "available_center_classes",
+    "center_counts_per_epoch",
+    "class_selected_center_counts_per_epoch",
+    "valid_point_counts_per_epoch",
+    "note"
+  ],
+  "sampling_diagnostic_note": "First 40 scheduled epochs, 2000 spheres per epoch. Training batch size 2 yields 1000 optimizer steps per epoch.",
+  "sampling_diagnostic_first40": {
+    "center_counts_per_epoch": [
+      5877,
+      38903,
+      3984,
+      27219,
+      4017
+    ],
+    "class_selected_center_counts_per_epoch": [
+      3983,
+      4071,
+      3982,
+      3944,
+      4017
+    ],
+    "valid_point_counts_per_epoch": [
+      17599779,
+      188546662,
+      18065331,
+      138672136,
+      33629910
+    ]
+  },
+  "per_point_vote_counts_identical": true
+}

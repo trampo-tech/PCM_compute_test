@@ -1,0 +1,116 @@
+[
+  {
+    "true": "tank",
+    "predicted": "tank",
+    "sampled_centers": 1000,
+    "mean_class_fractions": [
+      0.0,
+      0.02394226170486626,
+      0.0019474459556292974,
+      0.002991078074574992,
+      0.9711192142649312
+    ],
+    "same_class_fraction_q10_q50_q90": [
+      0.922044157033097,
+      0.9750105008718623,
+      1.0
+    ],
+    "median_valid_points": 8995.0,
+    "sphere_purity_above_99pct_fraction": 0.367
+  },
+  {
+    "true": "tank",
+    "predicted": "pump",
+    "sampled_centers": 1000,
+    "mean_class_fractions": [
+      0.0,
+      0.01897975891743937,
+      0.0469854366469359,
+      0.012536883838103372,
+      0.9214979205975214
+    ],
+    "same_class_fraction_q10_q50_q90": [
+      0.7576610703804715,
+      0.990499669688305,
+      1.0
+    ],
+    "median_valid_points": 8555.5,
+    "sphere_purity_above_99pct_fraction": 0.502
+  },
+  {
+    "true": "tank",
+    "predicted": "pipe",
+    "sampled_centers": 1000,
+    "mean_class_fractions": [
+      0.0,
+      0.01518459993370809,
+      0.0,
+      0.012150965983454784,
+      0.9726644340828366
+    ],
+    "same_class_fraction_q10_q50_q90": [
+      0.9380540494369692,
+      0.9804855768297007,
+      0.9994677716746034
+    ],
+    "median_valid_points": 9646.0,
+    "sphere_purity_above_99pct_fraction": 0.154
+  },
+  {
+    "true": "ibeam",
+    "predicted": "ibeam",
+    "sampled_centers": 1000,
+    "mean_class_fractions": [
+      0.5101608537437557,
+      0.06583634394748926,
+      4.837883120382885e-06,
+      0.4239979644256355,
+      0.0
+    ],
+    "same_class_fraction_q10_q50_q90": [
+      0.21452394594852697,
+      0.3786389240517185,
+      1.0
+    ],
+    "median_valid_points": 4810.5,
+    "sphere_purity_above_99pct_fraction": 0.167
+  },
+  {
+    "true": "ibeam",
+    "predicted": "rectangularbeam",
+    "sampled_centers": 1000,
+    "mean_class_fractions": [
+      0.5332770737464759,
+      0.4035456339594493,
+      0.0,
+      0.06317729229407507,
+      0.0
+    ],
+    "same_class_fraction_q10_q50_q90": [
+      0.3297365254911517,
+      0.44423118423028285,
+      1.0
+    ],
+    "median_valid_points": 3842.5,
+    "sphere_purity_above_99pct_fraction": 0.182
+  },
+  {
+    "true": "ibeam",
+    "predicted": "pipe",
+    "sampled_centers": 1000,
+    "mean_class_fractions": [
+      0.7734810960898121,
+      0.19086305556508903,
+      1.5031266988505597e-06,
+      0.03565434521840079,
+      0.0
+    ],
+    "same_class_fraction_q10_q50_q90": [
+      0.3570360275185066,
+      0.9709751814870142,
+      1.0
+    ],
+    "median_valid_points": 2116.0,
+    "sphere_purity_above_99pct_fraction": 0.429
+  }
+]

@@ -1,0 +1,349 @@
+{
+  "epochs": 10,
+  "samples": 20000,
+  "valid_points": {
+    "min": 1,
+    "percentiles": {
+      "0": 1.0,
+      "0.1": 1.0,
+      "1": 208.0,
+      "5": 962.0,
+      "25": 2521.75,
+      "50": 4692.5,
+      "75": 6824.0,
+      "100": 15000.0
+    }
+  },
+  "hierarchy": [
+    {
+      "stage": 1,
+      "input_min": 1,
+      "output_min": 1,
+      "configured_k": 12,
+      "samples_requiring_adaptive_k": 101
+    },
+    {
+      "stage": 2,
+      "input_min": 1,
+      "output_min": 1,
+      "configured_k": 12,
+      "samples_requiring_adaptive_k": 106
+    },
+    {
+      "stage": 3,
+      "input_min": 1,
+      "output_min": 1,
+      "configured_k": 12,
+      "samples_requiring_adaptive_k": 184
+    },
+    {
+      "stage": 4,
+      "input_min": 1,
+      "output_min": 1,
+      "configured_k": 12,
+      "samples_requiring_adaptive_k": 383
+    }
+  ],
+  "smallest_samples": [
+    {
+      "schedule_index": 8092,
+      "epoch": 4,
+      "step": 92,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 22033
+    },
+    {
+      "schedule_index": 2204,
+      "epoch": 1,
+      "step": 204,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 356776
+    },
+    {
+      "schedule_index": 11971,
+      "epoch": 5,
+      "step": 1971,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 356776
+    },
+    {
+      "schedule_index": 6049,
+      "epoch": 3,
+      "step": 49,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 356776
+    },
+    {
+      "schedule_index": 4153,
+      "epoch": 2,
+      "step": 153,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 22033
+    },
+    {
+      "schedule_index": 14355,
+      "epoch": 7,
+      "step": 355,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 356776
+    },
+    {
+      "schedule_index": 18973,
+      "epoch": 9,
+      "step": 973,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 356776
+    },
+    {
+      "schedule_index": 10761,
+      "epoch": 5,
+      "step": 761,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 356776
+    },
+    {
+      "schedule_index": 9652,
+      "epoch": 4,
+      "step": 1652,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 22033
+    },
+    {
+      "schedule_index": 11943,
+      "epoch": 5,
+      "step": 1943,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 22033
+    },
+    {
+      "schedule_index": 18989,
+      "epoch": 9,
+      "step": 989,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 22033
+    },
+    {
+      "schedule_index": 2159,
+      "epoch": 1,
+      "step": 159,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 22033
+    },
+    {
+      "schedule_index": 6945,
+      "epoch": 3,
+      "step": 945,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 22033
+    },
+    {
+      "schedule_index": 4135,
+      "epoch": 2,
+      "step": 135,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 356776
+    },
+    {
+      "schedule_index": 11179,
+      "epoch": 5,
+      "step": 1179,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 356776
+    },
+    {
+      "schedule_index": 6150,
+      "epoch": 3,
+      "step": 150,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 22033
+    },
+    {
+      "schedule_index": 5762,
+      "epoch": 2,
+      "step": 1762,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 22033
+    },
+    {
+      "schedule_index": 15471,
+      "epoch": 7,
+      "step": 1471,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 22033
+    },
+    {
+      "schedule_index": 991,
+      "epoch": 0,
+      "step": 991,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 356776
+    },
+    {
+      "schedule_index": 11184,
+      "epoch": 5,
+      "step": 1184,
+      "valid_points": 1,
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cloud_index": 0,
+      "point_index": 22033
+    }
+  ]
+}

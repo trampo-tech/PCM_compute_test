@@ -1,0 +1,167 @@
+{
+  "checkpoint": "/workspace/pcm-psnet5-project/PointCloudMamba/log/psnet5/psnet5-train-PCM-ngpus1-20260921-015453-TaGtTm9SrUhiW7w5mT6bo3/checkpoint/psnet5-train-PCM-ngpus1-20260921-015453-TaGtTm9SrUhiW7w5mT6bo3_ckpt_best.pth",
+  "checkpoint_info": {
+    "epoch": 85,
+    "best_val": 49.40781784057617
+  },
+  "votes": 20,
+  "num_steps_per_vote": 2000,
+  "one_vote": {
+    "oa": 0.847846815834367,
+    "macc": 0.5773550882971034,
+    "miou": 0.48890756885534536,
+    "per_class": [
+      {
+        "class": "ibeam",
+        "support": 465792,
+        "predicted": 1388210,
+        "precision": 0.11271565541236557,
+        "recall": 0.3359289124759549,
+        "iou": 0.09217692304520277
+      },
+      {
+        "class": "pipe",
+        "support": 10282042,
+        "predicted": 10890184,
+        "precision": 0.924620465549526,
+        "recall": 0.9793080985275104,
+        "iou": 0.9069028479756576
+      },
+      {
+        "class": "pump",
+        "support": 827763,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      {
+        "class": "rectangularbeam",
+        "support": 4081978,
+        "predicted": 3572041,
+        "precision": 0.8696613504716211,
+        "recall": 0.7610197801164044,
+        "iou": 0.6831071567500148
+      },
+      {
+        "class": "tank",
+        "support": 1527021,
+        "predicted": 1334161,
+        "precision": 0.9276833905353252,
+        "recall": 0.8105186503656466,
+        "iou": 0.7623509165058518
+      }
+    ]
+  },
+  "final": {
+    "oa": 0.8381683791695402,
+    "macc": 0.5570454216901308,
+    "miou": 0.4661132582078996,
+    "per_class": [
+      {
+        "class": "ibeam",
+        "support": 474764,
+        "predicted": 1481120,
+        "precision": 0.10768945122609917,
+        "recall": 0.3359584972744353,
+        "iou": 0.08879008541051658
+      },
+      {
+        "class": "pipe",
+        "support": 10522251,
+        "predicted": 11132266,
+        "precision": 0.9250229018961638,
+        "recall": 0.9786500055929097,
+        "iou": 0.906725117980973
+      },
+      {
+        "class": "pump",
+        "support": 842880,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      {
+        "class": "rectangularbeam",
+        "support": 4218789,
+        "predicted": 3801311,
+        "precision": 0.8420442315822094,
+        "recall": 0.7587182008865577,
+        "iou": 0.6641877080727453
+      },
+      {
+        "class": "tank",
+        "support": 1568829,
+        "predicted": 1212816,
+        "precision": 0.9208734053640454,
+        "recall": 0.7119004046967515,
+        "iou": 0.670863379575263
+      }
+    ]
+  },
+  "final_on_one_vote_support": {
+    "oa": 0.8392061122647283,
+    "macc": 0.5570397709251761,
+    "miou": 0.4663474062557807,
+    "per_class": [
+      {
+        "class": "ibeam",
+        "support": 465792,
+        "predicted": 1429117,
+        "precision": 0.10950817882650615,
+        "recall": 0.3359868782632591,
+        "iou": 0.090024844556143
+      },
+      {
+        "class": "pipe",
+        "support": 10282042,
+        "predicted": 10897062,
+        "precision": 0.9248043188154752,
+        "recall": 0.9801214583640098,
+        "iou": 0.9077774857239421
+      },
+      {
+        "class": "pump",
+        "support": 827763,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      {
+        "class": "rectangularbeam",
+        "support": 4081978,
+        "predicted": 3683527,
+        "precision": 0.8431505999548802,
+        "recall": 0.7608487845843364,
+        "iou": 0.6665114361604528
+      },
+      {
+        "class": "tank",
+        "support": 1527021,
+        "predicted": 1174890,
+        "precision": 0.920511707478998,
+        "recall": 0.7082417334142752,
+        "iou": 0.6674232648383651
+      }
+    ]
+  },
+  "areas": [
+    {
+      "name": "Area_1",
+      "subsampled_coverage": 0.9794924259185791,
+      "raw_coverage": 0.9783298658789603
+    },
+    {
+      "name": "Area_2",
+      "subsampled_coverage": 0.9302144050598145,
+      "raw_coverage": 0.9305246819963734
+    },
+    {
+      "name": "Area_4",
+      "subsampled_coverage": 0.9650216102600098,
+      "raw_coverage": 0.9697678722146246
+    }
+  ]
+}

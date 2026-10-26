@@ -1,0 +1,376 @@
+{
+  "model": "classmix_latest",
+  "checkpoint": "log/psnet5/psnet5-train-PCM-ce-classmix-ngpus1-20261021-021447-h5cKTHgDmf88V578n3amNu/checkpoint/psnet5-train-PCM-ce-classmix-ngpus1-20261021-021447-h5cKTHgDmf88V578n3amNu_ckpt_best.pth",
+  "checkpoint_info": {
+    "epoch": 35,
+    "best_val": 75.82435607910156
+  },
+  "height_offset_m": 0.5,
+  "protocol": "development",
+  "split": "val",
+  "spheres": 2000,
+  "seed": 20261004,
+  "bn_mode": "current_batch",
+  "metrics": {
+    "oa": 0.9335450772307944,
+    "macc": 0.8951486104941149,
+    "miou": 0.7582527829616519,
+    "per_class": [
+      {
+        "class": "ibeam",
+        "support": 465792,
+        "predicted": 738850,
+        "precision": 0.610604317520471,
+        "recall": 0.9685546338279747,
+        "iou": 0.5987349651027144
+      },
+      {
+        "class": "pipe",
+        "support": 10282042,
+        "predicted": 10322651,
+        "precision": 0.9704931417326809,
+        "recall": 0.9743261114864149,
+        "iou": 0.9462936792639698
+      },
+      {
+        "class": "pump",
+        "support": 827763,
+        "predicted": 805591,
+        "precision": 0.8210928374323944,
+        "recall": 0.7990995007024958,
+        "iou": 0.680597269852833
+      },
+      {
+        "class": "rectangularbeam",
+        "support": 4081978,
+        "predicted": 3684765,
+        "precision": 0.9818300488633603,
+        "recall": 0.8862891960711204,
+        "iou": 0.8719869942370684
+      },
+      {
+        "class": "tank",
+        "support": 1527021,
+        "predicted": 1632739,
+        "precision": 0.7926006544830496,
+        "recall": 0.8474736103825684,
+        "iou": 0.6936510063516736
+      }
+    ]
+  },
+  "areas": [
+    {
+      "name": "Area_1",
+      "raw_coverage": 0.9575804089066565,
+      "subsampled_coverage": 0.9613434076309204,
+      "metrics": {
+        "oa": 0.9859376841057627,
+        "macc": 0.9892327621384763,
+        "miou": 0.8514137933955507,
+        "per_class": [
+          {
+            "class": "ibeam",
+            "support": 61234,
+            "predicted": 118607,
+            "precision": 0.5153068537270145,
+            "recall": 0.9981219583891302,
+            "iou": 0.5148077020265831
+          },
+          {
+            "class": "pipe",
+            "support": 5995678,
+            "predicted": 5918009,
+            "precision": 0.998809058925054,
+            "recall": 0.9858703219218911,
+            "iou": 0.9847127788274861
+          },
+          {
+            "class": "pump",
+            "support": 412103,
+            "predicted": 434132,
+            "precision": 0.9330871716436475,
+            "recall": 0.9829654236926205,
+            "iou": 0.9182390649934716
+          },
+          {
+            "class": "rectangularbeam",
+            "support": 218717,
+            "predicted": 216984,
+            "precision": 0.9978800280204992,
+            "recall": 0.9899733445502635,
+            "iou": 0.9878956277346619
+          },
+          {
+            "class": "tank",
+            "support": 0,
+            "predicted": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "iou": 0.0
+          }
+        ]
+      },
+      "prediction_flip_fraction": 0.0,
+      "fixed_points": 0,
+      "broken_points": 0
+    },
+    {
+      "name": "Area_2",
+      "raw_coverage": 0.9040121831098265,
+      "subsampled_coverage": 0.9120723009109497,
+      "metrics": {
+        "oa": 0.8364445577994208,
+        "macc": 0.7303446162325501,
+        "miou": 0.5449340508585623,
+        "per_class": [
+          {
+            "class": "ibeam",
+            "support": 157448,
+            "predicted": 378817,
+            "precision": 0.3934960680222904,
+            "recall": 0.946744321934861,
+            "iou": 0.38497476769231564
+          },
+          {
+            "class": "pipe",
+            "support": 3290530,
+            "predicted": 3413703,
+            "precision": 0.9139696687145894,
+            "recall": 0.948181903827043,
+            "iou": 0.8704900826178809
+          },
+          {
+            "class": "pump",
+            "support": 237247,
+            "predicted": 184921,
+            "precision": 0.42163410321164174,
+            "recall": 0.32864061505519565,
+            "iou": 0.22652302882925285
+          },
+          {
+            "class": "rectangularbeam",
+            "support": 1100274,
+            "predicted": 702340,
+            "precision": 0.9096876156847111,
+            "recall": 0.580682629963082,
+            "iou": 0.5490313688016883
+          },
+          {
+            "class": "tank",
+            "support": 1527021,
+            "predicted": 1632739,
+            "precision": 0.7926006544830496,
+            "recall": 0.8474736103825684,
+            "iou": 0.6936510063516736
+          }
+        ]
+      },
+      "prediction_flip_fraction": 1.7108856684810503e-05,
+      "fixed_points": 34,
+      "broken_points": 74
+    },
+    {
+      "name": "Area_4",
+      "raw_coverage": 0.9442956503685248,
+      "subsampled_coverage": 0.9390444755554199,
+      "metrics": {
+        "oa": 0.9962935647738331,
+        "macc": 0.9915284412685316,
+        "miou": 0.9789500799475181,
+        "per_class": [
+          {
+            "class": "ibeam",
+            "support": 247110,
+            "predicted": 241426,
+            "precision": 0.9980822280947371,
+            "recall": 0.975124438509166,
+            "iou": 0.973300804207244
+          },
+          {
+            "class": "pipe",
+            "support": 995834,
+            "predicted": 990939,
+            "precision": 0.996105713873407,
+            "recall": 0.9912093782698723,
+            "iou": 0.9873831266198723
+          },
+          {
+            "class": "pump",
+            "support": 178413,
+            "predicted": 186538,
+            "precision": 0.9564431911996484,
+            "recall": 1.0,
+            "iou": 0.9564431911996484
+          },
+          {
+            "class": "rectangularbeam",
+            "support": 2762987,
+            "predicted": 2765441,
+            "precision": 0.9988927624924921,
+            "recall": 0.9997799482950879,
+            "iou": 0.9986731977633079
+          },
+          {
+            "class": "tank",
+            "support": 0,
+            "predicted": 0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "iou": 0.0
+          }
+        ]
+      },
+      "prediction_flip_fraction": 0.0,
+      "fixed_points": 0,
+      "broken_points": 0
+    }
+  ],
+  "height_bands": [
+    {
+      "area": "Area_1",
+      "class": 0,
+      "quartile": 1,
+      "zmin": 2.755000114440918,
+      "zmax": 2.7780001163482666,
+      "covered_points": 14302,
+      "recall": 1.0
+    },
+    {
+      "area": "Area_1",
+      "class": 0,
+      "quartile": 2,
+      "zmin": 2.7780001163482666,
+      "zmax": 2.8440001010894775,
+      "covered_points": 15940,
+      "recall": 0.9986825595984944
+    },
+    {
+      "area": "Area_1",
+      "class": 0,
+      "quartile": 3,
+      "zmin": 2.8440001010894775,
+      "zmax": 2.9690001010894775,
+      "covered_points": 15297,
+      "recall": 0.999542393933451
+    },
+    {
+      "area": "Area_1",
+      "class": 0,
+      "quartile": 4,
+      "zmin": 2.9690001010894775,
+      "zmax": 3.0309998989105225,
+      "covered_points": 15695,
+      "recall": 0.9944568333864288
+    },
+    {
+      "area": "Area_2",
+      "class": 0,
+      "quartile": 1,
+      "zmin": 93.11000061035156,
+      "zmax": 95.80699920654297,
+      "covered_points": 35082,
+      "recall": 0.998574767687133
+    },
+    {
+      "area": "Area_2",
+      "class": 0,
+      "quartile": 2,
+      "zmin": 95.80699920654297,
+      "zmax": 96.947998046875,
+      "covered_points": 40789,
+      "recall": 1.0
+    },
+    {
+      "area": "Area_2",
+      "class": 0,
+      "quartile": 3,
+      "zmin": 96.947998046875,
+      "zmax": 98.03299713134766,
+      "covered_points": 40748,
+      "recall": 0.9998282124276038
+    },
+    {
+      "area": "Area_2",
+      "class": 0,
+      "quartile": 4,
+      "zmin": 98.03299713134766,
+      "zmax": 107.35399627685547,
+      "covered_points": 40829,
+      "recall": 0.7960273335129442
+    },
+    {
+      "area": "Area_2",
+      "class": 4,
+      "quartile": 1,
+      "zmin": 85.29900360107422,
+      "zmax": 90.03500366210938,
+      "covered_points": 297906,
+      "recall": 1.0
+    },
+    {
+      "area": "Area_2",
+      "class": 4,
+      "quartile": 2,
+      "zmin": 90.03500366210938,
+      "zmax": 90.86199951171875,
+      "covered_points": 425576,
+      "recall": 0.8900877869052766
+    },
+    {
+      "area": "Area_2",
+      "class": 4,
+      "quartile": 3,
+      "zmin": 90.86199951171875,
+      "zmax": 91.49500274658203,
+      "covered_points": 402082,
+      "recall": 0.9625872334498933
+    },
+    {
+      "area": "Area_2",
+      "class": 4,
+      "quartile": 4,
+      "zmin": 91.49500274658203,
+      "zmax": 93.14399719238281,
+      "covered_points": 401457,
+      "recall": 0.5738223520825394
+    },
+    {
+      "area": "Area_4",
+      "class": 0,
+      "quartile": 1,
+      "zmin": 3.5,
+      "zmax": 3.569000005722046,
+      "covered_points": 60259,
+      "recall": 1.0
+    },
+    {
+      "area": "Area_4",
+      "class": 0,
+      "quartile": 2,
+      "zmin": 3.569000005722046,
+      "zmax": 3.7139999866485596,
+      "covered_points": 62256,
+      "recall": 1.0
+    },
+    {
+      "area": "Area_4",
+      "class": 0,
+      "quartile": 3,
+      "zmin": 3.7139999866485596,
+      "zmax": 3.8570001125335693,
+      "covered_points": 60995,
+      "recall": 1.0
+    },
+    {
+      "area": "Area_4",
+      "class": 0,
+      "quartile": 4,
+      "zmin": 3.8570001125335693,
+      "zmax": 3.996999979019165,
+      "covered_points": 63600,
+      "recall": 0.9033490566037736
+    }
+  ],
+  "repeat_control_max_logit_difference": 0.0,
+  "offset_max_logit_difference": 2.1138792037963867
+}

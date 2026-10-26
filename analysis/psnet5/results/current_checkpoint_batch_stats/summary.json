@@ -1,0 +1,218 @@
+{
+  "checkpoint": "log/psnet5/psnet5-train-PCM-ngpus1-20261004-190052-iZHeMo9eucRDbunZPvXJuC/checkpoint/psnet5-train-PCM-ngpus1-20261004-190052-iZHeMo9eucRDbunZPvXJuC_ckpt_best.pth",
+  "checkpoint_info": {
+    "epoch": 25,
+    "best_val": 21.8725643157959
+  },
+  "evaluation_protocol": "development",
+  "evaluation_split": "val",
+  "votes": 1,
+  "num_steps_per_vote": 2000,
+  "one_vote": {
+    "oa": 0.9261221503257918,
+    "macc": 0.8327057384269713,
+    "miou": 0.746807214052342,
+    "per_class": [
+      {
+        "class": "ibeam",
+        "support": 465792,
+        "predicted": 552281,
+        "precision": 0.7081702973667391,
+        "recall": 0.8396644854355593,
+        "iou": 0.6238141264889212
+      },
+      {
+        "class": "pipe",
+        "support": 10282042,
+        "predicted": 10692331,
+        "precision": 0.9363209014012005,
+        "recall": 0.9736833403325915,
+        "iou": 0.9132104402841579
+      },
+      {
+        "class": "pump",
+        "support": 827763,
+        "predicted": 565136,
+        "precision": 0.9987259703858894,
+        "recall": 0.6818570049639813,
+        "iou": 0.6812644314970856
+      },
+      {
+        "class": "rectangularbeam",
+        "support": 4081978,
+        "predicted": 3918929,
+        "precision": 0.9786329377235464,
+        "recall": 0.939542790284514,
+        "iou": 0.9206568189750904
+      },
+      {
+        "class": "tank",
+        "support": 1527021,
+        "predicted": 1455919,
+        "precision": 0.7643721937827586,
+        "recall": 0.7287810711182099,
+        "iou": 0.5950902530164549
+      }
+    ]
+  },
+  "final": {
+    "oa": 0.9261221503257918,
+    "macc": 0.8327057384269713,
+    "miou": 0.746807214052342,
+    "per_class": [
+      {
+        "class": "ibeam",
+        "support": 465792,
+        "predicted": 552281,
+        "precision": 0.7081702973667391,
+        "recall": 0.8396644854355593,
+        "iou": 0.6238141264889212
+      },
+      {
+        "class": "pipe",
+        "support": 10282042,
+        "predicted": 10692331,
+        "precision": 0.9363209014012005,
+        "recall": 0.9736833403325915,
+        "iou": 0.9132104402841579
+      },
+      {
+        "class": "pump",
+        "support": 827763,
+        "predicted": 565136,
+        "precision": 0.9987259703858894,
+        "recall": 0.6818570049639813,
+        "iou": 0.6812644314970856
+      },
+      {
+        "class": "rectangularbeam",
+        "support": 4081978,
+        "predicted": 3918929,
+        "precision": 0.9786329377235464,
+        "recall": 0.939542790284514,
+        "iou": 0.9206568189750904
+      },
+      {
+        "class": "tank",
+        "support": 1527021,
+        "predicted": 1455919,
+        "precision": 0.7643721937827586,
+        "recall": 0.7287810711182099,
+        "iou": 0.5950902530164549
+      }
+    ]
+  },
+  "reference_full_raw": {
+    "oa": 0.8657871810949392,
+    "macc": 0.777653250474129,
+    "miou": 0.6197013458120819,
+    "per_class": [
+      {
+        "class": "ibeam",
+        "support": 479468,
+        "predicted": 1765637,
+        "precision": 0.22925720292449694,
+        "recall": 0.8442377802063954,
+        "iou": 0.21995359502695183
+      },
+      {
+        "class": "pipe",
+        "support": 10747371,
+        "predicted": 10692331,
+        "precision": 0.9363209014012005,
+        "recall": 0.9315257656965596,
+        "iou": 0.8760268524075735
+      },
+      {
+        "class": "pump",
+        "support": 867452,
+        "predicted": 565136,
+        "precision": 0.9987259703858894,
+        "recall": 0.6506596330402143,
+        "iou": 0.6501200222997287
+      },
+      {
+        "class": "rectangularbeam",
+        "support": 4447237,
+        "predicted": 3918929,
+        "precision": 0.9786329377235464,
+        "recall": 0.8623765722402471,
+        "iou": 0.8464391643914011
+      },
+      {
+        "class": "tank",
+        "support": 1856424,
+        "predicted": 1455919,
+        "precision": 0.7643721937827586,
+        "recall": 0.5994665011872288,
+        "iou": 0.505967094934755
+      }
+    ]
+  },
+  "uncovered_raw_points": 1213356,
+  "final_on_one_vote_support": {
+    "oa": 0.9261221503257918,
+    "macc": 0.8327057384269713,
+    "miou": 0.746807214052342,
+    "per_class": [
+      {
+        "class": "ibeam",
+        "support": 465792,
+        "predicted": 552281,
+        "precision": 0.7081702973667391,
+        "recall": 0.8396644854355593,
+        "iou": 0.6238141264889212
+      },
+      {
+        "class": "pipe",
+        "support": 10282042,
+        "predicted": 10692331,
+        "precision": 0.9363209014012005,
+        "recall": 0.9736833403325915,
+        "iou": 0.9132104402841579
+      },
+      {
+        "class": "pump",
+        "support": 827763,
+        "predicted": 565136,
+        "precision": 0.9987259703858894,
+        "recall": 0.6818570049639813,
+        "iou": 0.6812644314970856
+      },
+      {
+        "class": "rectangularbeam",
+        "support": 4081978,
+        "predicted": 3918929,
+        "precision": 0.9786329377235464,
+        "recall": 0.939542790284514,
+        "iou": 0.9206568189750904
+      },
+      {
+        "class": "tank",
+        "support": 1527021,
+        "predicted": 1455919,
+        "precision": 0.7643721937827586,
+        "recall": 0.7287810711182099,
+        "iou": 0.5950902530164549
+      }
+    ]
+  },
+  "areas": [
+    {
+      "name": "Area_1",
+      "subsampled_coverage": 0.9613434076309204,
+      "raw_coverage": 0.9575804089066565
+    },
+    {
+      "name": "Area_2",
+      "subsampled_coverage": 0.9120723009109497,
+      "raw_coverage": 0.9040121831098265
+    },
+    {
+      "name": "Area_4",
+      "subsampled_coverage": 0.9390444755554199,
+      "raw_coverage": 0.9442956503685248
+    }
+  ],
+  "bn_mode": "current_batch"
+}

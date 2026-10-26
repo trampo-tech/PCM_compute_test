@@ -1,0 +1,4 @@
+state=completed
+started_at=2026-10-05T14:33:17-03:00
+finished_at=2026-10-05T20:05:18-03:00
+exit_code=0

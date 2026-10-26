@@ -1,0 +1,2631 @@
+{
+  "protocol": "benchmark",
+  "voxel_size": 0.04,
+  "areas": [
+    {
+      "role": "train",
+      "area": "Area_1",
+      "checks": {
+        "subsampled_points": {
+          "passed": true,
+          "shape": [
+            451641,
+            3
+          ],
+          "max_abs_error": 0.0
+        },
+        "subsampled_colors": {
+          "passed": true,
+          "shape": [
+            451641,
+            3
+          ],
+          "max_abs_error": 0.0
+        },
+        "subsampled_labels": {
+          "passed": true,
+          "shape": [
+            451641
+          ],
+          "max_abs_error": 0.0
+        }
+      },
+      "samples": [
+        {
+          "center_index": 258172,
+          "valid_points": 10640,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              10640
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 10640
+          },
+          "passed": true
+        },
+        {
+          "center_index": 205743,
+          "valid_points": 8096,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              8096
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 8096
+          },
+          "passed": true
+        },
+        {
+          "center_index": 197258,
+          "valid_points": 4105,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              4105
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 4105
+          },
+          "passed": true
+        },
+        {
+          "center_index": 380374,
+          "valid_points": 8704,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              8704
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 8704
+          },
+          "passed": true
+        },
+        {
+          "center_index": 27324,
+          "valid_points": 2399,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              2399
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 2399
+          },
+          "passed": true
+        },
+        {
+          "center_index": 114693,
+          "valid_points": 6193,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              6193
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 6193
+          },
+          "passed": true
+        },
+        {
+          "center_index": 446712,
+          "valid_points": 9096,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              9096
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 9096
+          },
+          "passed": true
+        },
+        {
+          "center_index": 351821,
+          "valid_points": 6383,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              6383
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 6383
+          },
+          "passed": true
+        },
+        {
+          "center_index": 92452,
+          "valid_points": 2121,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              2121
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 2121
+          },
+          "passed": true
+        },
+        {
+          "center_index": 218142,
+          "valid_points": 7351,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              7351
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 7351
+          },
+          "passed": true
+        },
+        {
+          "center_index": 158390,
+          "valid_points": 6269,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              6269
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 6269
+          },
+          "passed": true
+        },
+        {
+          "center_index": 417788,
+          "valid_points": 3667,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              3667
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 3667
+          },
+          "passed": true
+        },
+        {
+          "center_index": 264136,
+          "valid_points": 12048,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              12048
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 12048
+          },
+          "passed": true
+        },
+        {
+          "center_index": 46977,
+          "valid_points": 7582,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              7582
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 7582
+          },
+          "passed": true
+        },
+        {
+          "center_index": 141537,
+          "valid_points": 4729,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              4729
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 4729
+          },
+          "passed": true
+        },
+        {
+          "center_index": 194321,
+          "valid_points": 9071,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              9071
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 9071
+          },
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "role": "train",
+      "area": "Area_2",
+      "checks": {
+        "subsampled_points": {
+          "passed": true,
+          "shape": [
+            409450,
+            3
+          ],
+          "max_abs_error": 0.0
+        },
+        "subsampled_colors": {
+          "passed": true,
+          "shape": [
+            409450,
+            3
+          ],
+          "max_abs_error": 0.0
+        },
+        "subsampled_labels": {
+          "passed": true,
+          "shape": [
+            409450
+          ],
+          "max_abs_error": 0.0
+        }
+      },
+      "samples": [
+        {
+          "center_index": 395149,
+          "valid_points": 15000,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              16271
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 15000
+          },
+          "passed": true
+        },
+        {
+          "center_index": 275380,
+          "valid_points": 10869,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              10869
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 10869
+          },
+          "passed": true
+        },
+        {
+          "center_index": 249678,
+          "valid_points": 4172,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              4172
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 4172
+          },
+          "passed": true
+        },
+        {
+          "center_index": 174988,
+          "valid_points": 2159,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              2159
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 2159
+          },
+          "passed": true
+        },
+        {
+          "center_index": 318289,
+          "valid_points": 6028,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              6028
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 6028
+          },
+          "passed": true
+        },
+        {
+          "center_index": 342407,
+          "valid_points": 4748,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              4748
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 4748
+          },
+          "passed": true
+        },
+        {
+          "center_index": 63123,
+          "valid_points": 4333,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              4333
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 4333
+          },
+          "passed": true
+        },
+        {
+          "center_index": 81820,
+          "valid_points": 1953,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              1953
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 1953
+          },
+          "passed": true
+        },
+        {
+          "center_index": 103810,
+          "valid_points": 9423,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              9423
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 9423
+          },
+          "passed": true
+        },
+        {
+          "center_index": 91398,
+          "valid_points": 3815,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              3815
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 3815
+          },
+          "passed": true
+        },
+        {
+          "center_index": 102476,
+          "valid_points": 10859,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              10859
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 10859
+          },
+          "passed": true
+        },
+        {
+          "center_index": 9669,
+          "valid_points": 11264,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              11264
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 11264
+          },
+          "passed": true
+        },
+        {
+          "center_index": 260555,
+          "valid_points": 9941,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              9941
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 9941
+          },
+          "passed": true
+        },
+        {
+          "center_index": 91493,
+          "valid_points": 3605,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              3605
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 3605
+          },
+          "passed": true
+        },
+        {
+          "center_index": 394183,
+          "valid_points": 10496,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              10496
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 10496
+          },
+          "passed": true
+        },
+        {
+          "center_index": 353382,
+          "valid_points": 4641,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              4641
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 4641
+          },
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "role": "train",
+      "area": "Area_4",
+      "checks": {
+        "subsampled_points": {
+          "passed": true,
+          "shape": [
+            145502,
+            3
+          ],
+          "max_abs_error": 0.0
+        },
+        "subsampled_colors": {
+          "passed": true,
+          "shape": [
+            145502,
+            3
+          ],
+          "max_abs_error": 0.0
+        },
+        "subsampled_labels": {
+          "passed": true,
+          "shape": [
+            145502
+          ],
+          "max_abs_error": 0.0
+        }
+      },
+      "samples": [
+        {
+          "center_index": 82496,
+          "valid_points": 5402,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              5402
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 5402
+          },
+          "passed": true
+        },
+        {
+          "center_index": 20549,
+          "valid_points": 4067,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              4067
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 4067
+          },
+          "passed": true
+        },
+        {
+          "center_index": 22061,
+          "valid_points": 3851,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              3851
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 3851
+          },
+          "passed": true
+        },
+        {
+          "center_index": 126326,
+          "valid_points": 7634,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              7634
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 7634
+          },
+          "passed": true
+        },
+        {
+          "center_index": 959,
+          "valid_points": 4355,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              4355
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 4355
+          },
+          "passed": true
+        },
+        {
+          "center_index": 142667,
+          "valid_points": 7410,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              7410
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 7410
+          },
+          "passed": true
+        },
+        {
+          "center_index": 123480,
+          "valid_points": 3580,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              3580
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 3580
+          },
+          "passed": true
+        },
+        {
+          "center_index": 75107,
+          "valid_points": 4764,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              4764
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 4764
+          },
+          "passed": true
+        },
+        {
+          "center_index": 20817,
+          "valid_points": 2330,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              2330
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 2330
+          },
+          "passed": true
+        },
+        {
+          "center_index": 70403,
+          "valid_points": 6417,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              6417
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 6417
+          },
+          "passed": true
+        },
+        {
+          "center_index": 49302,
+          "valid_points": 4238,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              4238
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 4238
+          },
+          "passed": true
+        },
+        {
+          "center_index": 33201,
+          "valid_points": 3480,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              3480
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 3480
+          },
+          "passed": true
+        },
+        {
+          "center_index": 59116,
+          "valid_points": 5486,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              5486
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 5486
+          },
+          "passed": true
+        },
+        {
+          "center_index": 122106,
+          "valid_points": 6292,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              6292
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 6292
+          },
+          "passed": true
+        },
+        {
+          "center_index": 143063,
+          "valid_points": 4045,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              4045
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 4045
+          },
+          "passed": true
+        },
+        {
+          "center_index": 20335,
+          "valid_points": 2195,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              2195
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 2195
+          },
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "role": "test",
+      "area": "Area_3",
+      "checks": {
+        "subsampled_points": {
+          "passed": true,
+          "shape": [
+            532637,
+            3
+          ],
+          "max_abs_error": 0.0
+        },
+        "subsampled_colors": {
+          "passed": true,
+          "shape": [
+            532637,
+            3
+          ],
+          "max_abs_error": 0.0
+        },
+        "subsampled_labels": {
+          "passed": true,
+          "shape": [
+            532637
+          ],
+          "max_abs_error": 0.0
+        }
+      },
+      "samples": [
+        {
+          "center_index": 317477,
+          "valid_points": 9768,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              9768
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 9768
+          },
+          "passed": true
+        },
+        {
+          "center_index": 26608,
+          "valid_points": 10540,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              10540
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 10540
+          },
+          "passed": true
+        },
+        {
+          "center_index": 128837,
+          "valid_points": 3530,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              3530
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 3530
+          },
+          "passed": true
+        },
+        {
+          "center_index": 266188,
+          "valid_points": 2135,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              2135
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 2135
+          },
+          "passed": true
+        },
+        {
+          "center_index": 419362,
+          "valid_points": 6529,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              6529
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 6529
+          },
+          "passed": true
+        },
+        {
+          "center_index": 87231,
+          "valid_points": 6097,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              6097
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 6097
+          },
+          "passed": true
+        },
+        {
+          "center_index": 397639,
+          "valid_points": 9074,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              9074
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 9074
+          },
+          "passed": true
+        },
+        {
+          "center_index": 449011,
+          "valid_points": 8030,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              8030
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 8030
+          },
+          "passed": true
+        },
+        {
+          "center_index": 333028,
+          "valid_points": 6218,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              6218
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 6218
+          },
+          "passed": true
+        },
+        {
+          "center_index": 376385,
+          "valid_points": 3405,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              3405
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 3405
+          },
+          "passed": true
+        },
+        {
+          "center_index": 315097,
+          "valid_points": 7420,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              7420
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 7420
+          },
+          "passed": true
+        },
+        {
+          "center_index": 512942,
+          "valid_points": 4215,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              4215
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 4215
+          },
+          "passed": true
+        },
+        {
+          "center_index": 504715,
+          "valid_points": 2293,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              2293
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 2293
+          },
+          "passed": true
+        },
+        {
+          "center_index": 294414,
+          "valid_points": 6403,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              6403
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 6403
+          },
+          "passed": true
+        },
+        {
+          "center_index": 88389,
+          "valid_points": 5260,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              5260
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 5260
+          },
+          "passed": true
+        },
+        {
+          "center_index": 42651,
+          "valid_points": 6757,
+          "query_indices": {
+            "passed": true,
+            "shape": [
+              6757
+            ],
+            "max_abs_error": 0.0
+          },
+          "local_position": {
+            "passed": true,
+            "shape": [
+              15000,
+              3
+            ],
+            "max_abs_error": 0.0
+          },
+          "rgb_height_features": {
+            "passed": true,
+            "shape": [
+              15000,
+              4
+            ],
+            "max_abs_error": 0.0
+          },
+          "labels": {
+            "passed": true,
+            "shape": [
+              15000
+            ],
+            "max_abs_error": 0.0
+          },
+          "mask_cardinality": {
+            "passed": true,
+            "value": 6757
+          },
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "passed": true
+}

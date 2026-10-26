@@ -1,0 +1,42 @@
+{
+  "checkpoint": "/workspace/pcm-psnet5-project/PointCloudMamba/log/psnet5/psnet5-train-PCM-ngpus1-20260921-015453-TaGtTm9SrUhiW7w5mT6bo3/checkpoint/psnet5-train-PCM-ngpus1-20260921-015453-TaGtTm9SrUhiW7w5mT6bo3_ckpt_best.pth",
+  "valid_points": 10622,
+  "total_points": 15000,
+  "padding_fraction": 0.291866660118103,
+  "variants": 3,
+  "legacy_full_padded_input": [
+    {
+      "mean_abs_logit_change": 0.04149971157312393,
+      "max_abs_logit_change": 0.45494693517684937,
+      "prediction_flip_fraction": 0.022500470280647278
+    },
+    {
+      "mean_abs_logit_change": 0.04831225052475929,
+      "max_abs_logit_change": 0.3829503059387207,
+      "prediction_flip_fraction": 0.05112031474709511
+    },
+    {
+      "mean_abs_logit_change": 0.02645656280219555,
+      "max_abs_logit_change": 0.39194440841674805,
+      "prediction_flip_fraction": 0.02730182558298111
+    }
+  ],
+  "mask_compacted_input": [
+    {
+      "mean_abs_logit_change": 0.0,
+      "max_abs_logit_change": 0.0,
+      "prediction_flip_fraction": 0.0
+    },
+    {
+      "mean_abs_logit_change": 0.0,
+      "max_abs_logit_change": 0.0,
+      "prediction_flip_fraction": 0.0
+    },
+    {
+      "mean_abs_logit_change": 0.0,
+      "max_abs_logit_change": 0.0,
+      "prediction_flip_fraction": 0.0
+    }
+  ],
+  "interpretation": "A successful compaction has zero (or numerical-zero) sensitivity because variants change only points whose mask is false. This diagnoses isolation, not post-retraining mIoU."
+}

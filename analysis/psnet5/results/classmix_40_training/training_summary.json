@@ -1,0 +1,24 @@
+{
+  "run": "PointCloudMamba/log/psnet5/psnet5-train-PCM-ce-classmix-ngpus1-20261021-021447-h5cKTHgDmf88V578n3amNu",
+  "epochs_completed": 40,
+  "best_epoch": 35,
+  "validation": {
+    "oa": 93.35,
+    "macc": 89.51,
+    "miou": 75.82435607910156,
+    "per_class_iou": {
+      "ibeam": 59.87,
+      "pipe": 94.63,
+      "pump": 68.06,
+      "rectangularbeam": 87.2,
+      "tank": 69.37
+    }
+  },
+  "last_epoch": {
+    "epoch": 40,
+    "lr": 1e-05,
+    "train_miou": 95.04,
+    "val_miou": 74.59,
+    "best_val_miou": 75.82
+  }
+}

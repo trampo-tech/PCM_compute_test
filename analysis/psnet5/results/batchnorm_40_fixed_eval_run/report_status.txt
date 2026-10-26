@@ -1,0 +1,4 @@
+state=complete
+updated_at=2026-10-07T17:53:08.490139-03:00
+message=Updated 40-epoch report and all three figures from the completed latest Area 3 evaluation.
+report=analysis/psnet5/batchnorm_40_report/REPORT.md

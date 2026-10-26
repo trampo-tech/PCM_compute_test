@@ -1,0 +1,207 @@
+{
+  "checkpoint": "log/psnet5/psnet5-train-PCM-ngpus1-20261001-020301-ZFsYzBz5npWmN8iQPyskeD/checkpoint/psnet5-train-PCM-ngpus1-20261001-020301-ZFsYzBz5npWmN8iQPyskeD_ckpt_best.pth",
+  "checkpoint_info": {
+    "epoch": 84,
+    "best_val": 30.012571334838867
+  },
+  "evaluation_protocol": "benchmark",
+  "evaluation_split": "test",
+  "votes": 1,
+  "num_steps_per_vote": 2000,
+  "one_vote": {
+    "oa": 0.6654997455253581,
+    "macc": 0.3718782068982425,
+    "miou": 0.2531679837005006,
+    "per_class": [
+      {
+        "class": "ibeam",
+        "support": 3023003,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      {
+        "class": "pipe",
+        "support": 8408907,
+        "predicted": 10751948,
+        "precision": 0.6721147646919423,
+        "recall": 0.8593914762049336,
+        "iou": 0.6055265691059527
+      },
+      {
+        "class": "pump",
+        "support": 2455212,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      {
+        "class": "rectangularbeam",
+        "support": 9055639,
+        "predicted": 13714144,
+        "precision": 0.6603135419899339,
+        "recall": 0.9999995582862788,
+        "iou": 0.6603133493965502
+      },
+      {
+        "class": "tank",
+        "support": 1523331,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      }
+    ]
+  },
+  "final": {
+    "oa": 0.6654997455253581,
+    "macc": 0.3718782068982425,
+    "miou": 0.2531679837005006,
+    "per_class": [
+      {
+        "class": "ibeam",
+        "support": 3023003,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      {
+        "class": "pipe",
+        "support": 8408907,
+        "predicted": 10751948,
+        "precision": 0.6721147646919423,
+        "recall": 0.8593914762049336,
+        "iou": 0.6055265691059527
+      },
+      {
+        "class": "pump",
+        "support": 2455212,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      {
+        "class": "rectangularbeam",
+        "support": 9055639,
+        "predicted": 13714144,
+        "precision": 0.6603135419899339,
+        "recall": 0.9999995582862788,
+        "iou": 0.6603133493965502
+      },
+      {
+        "class": "tank",
+        "support": 1523331,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      }
+    ]
+  },
+  "reference_full_raw": {
+    "oa": 0.6654997455253581,
+    "macc": 0.3718782068982425,
+    "miou": 0.2531679837005006,
+    "per_class": [
+      {
+        "class": "ibeam",
+        "support": 3023003,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      {
+        "class": "pipe",
+        "support": 8408907,
+        "predicted": 10751948,
+        "precision": 0.6721147646919423,
+        "recall": 0.8593914762049336,
+        "iou": 0.6055265691059527
+      },
+      {
+        "class": "pump",
+        "support": 2455212,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      {
+        "class": "rectangularbeam",
+        "support": 9055639,
+        "predicted": 13714144,
+        "precision": 0.6603135419899339,
+        "recall": 0.9999995582862788,
+        "iou": 0.6603133493965502
+      },
+      {
+        "class": "tank",
+        "support": 1523331,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      }
+    ]
+  },
+  "uncovered_raw_points": 0,
+  "final_on_one_vote_support": {
+    "oa": 0.6654997455253581,
+    "macc": 0.3718782068982425,
+    "miou": 0.2531679837005006,
+    "per_class": [
+      {
+        "class": "ibeam",
+        "support": 3023003,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      {
+        "class": "pipe",
+        "support": 8408907,
+        "predicted": 10751948,
+        "precision": 0.6721147646919423,
+        "recall": 0.8593914762049336,
+        "iou": 0.6055265691059527
+      },
+      {
+        "class": "pump",
+        "support": 2455212,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      {
+        "class": "rectangularbeam",
+        "support": 9055639,
+        "predicted": 13714144,
+        "precision": 0.6603135419899339,
+        "recall": 0.9999995582862788,
+        "iou": 0.6603133493965502
+      },
+      {
+        "class": "tank",
+        "support": 1523331,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      }
+    ]
+  },
+  "areas": [
+    {
+      "name": "Area_3",
+      "subsampled_coverage": 1.0,
+      "raw_coverage": 1.0
+    }
+  ]
+}

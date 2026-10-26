@@ -1,0 +1,22 @@
+{
+  "best": {
+    "center_counts": [
+      5930,
+      40407,
+      2961,
+      27441,
+      3261
+    ],
+    "unique_centers": 3032
+  },
+  "latest": {
+    "center_counts": [
+      5877,
+      38903,
+      3984,
+      27219,
+      4017
+    ],
+    "unique_centers": 3010
+  }
+}

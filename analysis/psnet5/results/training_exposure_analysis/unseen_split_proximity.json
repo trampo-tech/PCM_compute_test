@@ -1,0 +1,114 @@
+[
+  {
+    "area": "Area_1",
+    "class": "ibeam",
+    "sampler": "spatial",
+    "unseen_points": 48,
+    "median_distance_to_split_m": 0.021739959716796875,
+    "max_distance_to_split_m": 0.09862899780273438
+  },
+  {
+    "area": "Area_1",
+    "class": "ibeam",
+    "sampler": "classmix",
+    "unseen_points": 49,
+    "median_distance_to_split_m": 0.02185821533203125,
+    "max_distance_to_split_m": 0.09862899780273438
+  },
+  {
+    "area": "Area_1",
+    "class": "rectangularbeam",
+    "sampler": "spatial",
+    "unseen_points": 298,
+    "median_distance_to_split_m": 0.021764755249023438,
+    "max_distance_to_split_m": 0.180755615234375
+  },
+  {
+    "area": "Area_1",
+    "class": "rectangularbeam",
+    "sampler": "classmix",
+    "unseen_points": 336,
+    "median_distance_to_split_m": 0.021871566772460938,
+    "max_distance_to_split_m": 0.22183990478515625
+  },
+  {
+    "area": "Area_2",
+    "class": "ibeam",
+    "sampler": "spatial",
+    "unseen_points": 1441,
+    "median_distance_to_split_m": 0.41845703125,
+    "max_distance_to_split_m": 0.92578125
+  },
+  {
+    "area": "Area_2",
+    "class": "ibeam",
+    "sampler": "classmix",
+    "unseen_points": 1338,
+    "median_distance_to_split_m": 0.3878173828125,
+    "max_distance_to_split_m": 0.92578125
+  },
+  {
+    "area": "Area_2",
+    "class": "rectangularbeam",
+    "sampler": "spatial",
+    "unseen_points": 560,
+    "median_distance_to_split_m": 0.02197265625,
+    "max_distance_to_split_m": 0.133056640625
+  },
+  {
+    "area": "Area_2",
+    "class": "rectangularbeam",
+    "sampler": "classmix",
+    "unseen_points": 540,
+    "median_distance_to_split_m": 0.02001953125,
+    "max_distance_to_split_m": 0.122314453125
+  },
+  {
+    "area": "Area_2",
+    "class": "tank",
+    "sampler": "spatial",
+    "unseen_points": 7243,
+    "median_distance_to_split_m": 0.177978515625,
+    "max_distance_to_split_m": 0.831787109375
+  },
+  {
+    "area": "Area_2",
+    "class": "tank",
+    "sampler": "classmix",
+    "unseen_points": 7939,
+    "median_distance_to_split_m": 0.206787109375,
+    "max_distance_to_split_m": 0.826904296875
+  },
+  {
+    "area": "Area_4",
+    "class": "ibeam",
+    "sampler": "spatial",
+    "unseen_points": 1,
+    "median_distance_to_split_m": 0.0053462982177734375,
+    "max_distance_to_split_m": 0.0053462982177734375
+  },
+  {
+    "area": "Area_4",
+    "class": "ibeam",
+    "sampler": "classmix",
+    "unseen_points": 9,
+    "median_distance_to_split_m": 0.0136260986328125,
+    "max_distance_to_split_m": 0.017200469970703125
+  },
+  {
+    "area": "Area_4",
+    "class": "rectangularbeam",
+    "sampler": "spatial",
+    "unseen_points": 2991,
+    "median_distance_to_split_m": 0.3214893341064453,
+    "max_distance_to_split_m": 0.7738146781921387
+  },
+  {
+    "area": "Area_4",
+    "class": "rectangularbeam",
+    "sampler": "classmix",
+    "unseen_points": 1840,
+    "median_distance_to_split_m": 0.34023475646972656,
+    "max_distance_to_split_m": 0.7344903945922852
+  }
+]

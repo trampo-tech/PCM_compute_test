@@ -1,0 +1,136 @@
+{
+  "config": "cfgs/psnet5/PCM.yaml",
+  "batch_size": 2,
+  "point_cap": 15000,
+  "warmup_batches": 2,
+  "timed_batches": 6,
+  "profiler_batches": 2,
+  "peak_allocated_gib": 5.044,
+  "timings": {
+    "data_wait": {
+      "mean_ms": 0.14,
+      "min_ms": 0.07,
+      "max_ms": 0.2
+    },
+    "transfer": {
+      "mean_ms": 0.45,
+      "min_ms": 0.37,
+      "max_ms": 0.57
+    },
+    "forward": {
+      "mean_ms": 293.63,
+      "min_ms": 248.5,
+      "max_ms": 364.95
+    },
+    "loss": {
+      "mean_ms": 0.71,
+      "min_ms": 0.44,
+      "max_ms": 1.1
+    },
+    "backward": {
+      "mean_ms": 509.09,
+      "min_ms": 364.15,
+      "max_ms": 760.51
+    },
+    "optimizer": {
+      "mean_ms": 9.12,
+      "min_ms": 8.63,
+      "max_ms": 10.71
+    },
+    "total": {
+      "mean_ms": 813.14,
+      "min_ms": 623.02,
+      "max_ms": 1115.3
+    }
+  },
+  "batches": [
+    {
+      "batch": 0,
+      "valid_points": [
+        1715,
+        5953
+      ],
+      "data_wait": 7.436296436935663e-05,
+      "transfer": 0.00037054502172395587,
+      "forward": 0.3649478410370648,
+      "loss": 0.0006779720424674451,
+      "backward": 0.6491164909675717,
+      "optimizer": 0.010708529967814684,
+      "total": 1.025895742001012
+    },
+    {
+      "batch": 1,
+      "valid_points": [
+        5908,
+        1193
+      ],
+      "data_wait": 0.00019224302377551794,
+      "transfer": 0.00041169801261276007,
+      "forward": 0.2715342689771205,
+      "loss": 0.00043720396934077144,
+      "backward": 0.41423796699382365,
+      "optimizer": 0.009076094022020698,
+      "total": 0.6958894749986939
+    },
+    {
+      "batch": 2,
+      "valid_points": [
+        3497,
+        962
+      ],
+      "data_wait": 0.0002001189859583974,
+      "transfer": 0.0005663210176862776,
+      "forward": 0.34492687799502164,
+      "loss": 0.00043579802149906754,
+      "backward": 0.760505540005397,
+      "optimizer": 0.00866605999181047,
+      "total": 1.115300716017373
+    },
+    {
+      "batch": 3,
+      "valid_points": [
+        10006,
+        8175
+      ],
+      "data_wait": 0.00015474302927032113,
+      "transfer": 0.0004879639600403607,
+      "forward": 0.24849877803353593,
+      "loss": 0.0010975380428135395,
+      "backward": 0.3641542679979466,
+      "optimizer": 0.008630094002000988,
+      "total": 0.6230233850656077
+    },
+    {
+      "batch": 4,
+      "valid_points": [
+        6974,
+        11345
+      ],
+      "data_wait": 7.91019992902875e-05,
+      "transfer": 0.00040574499871581793,
+      "forward": 0.2605415459838696,
+      "loss": 0.0005015829810872674,
+      "backward": 0.3815516430186108,
+      "optimizer": 0.008742605044972152,
+      "total": 0.6518222240265459
+    },
+    {
+      "batch": 5,
+      "valid_points": [
+        2313,
+        6694
+      ],
+      "data_wait": 0.00016463303472846746,
+      "transfer": 0.0004669519839808345,
+      "forward": 0.27130074496380985,
+      "loss": 0.0010826410143636167,
+      "backward": 0.48498589801602066,
+      "optimizer": 0.008883807982783765,
+      "total": 0.7668846769956872
+    }
+  ],
+  "operators": {
+    "cuda": "-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                             aten::convolution_backward        19.03%     560.934ms        32.14%     947.225ms       7.176ms     299.788ms        53.67%     368.635ms       2.793ms           132  \n                                aten::cudnn_convolution        11.04%     325.488ms        15.56%     458.624ms       3.474ms     103.592ms        18.54%     127.800ms     968.182us           132  \n                                       cudaLaunchKernel         2.21%      65.212ms         2.21%      65.227ms       3.110us      77.287ms        13.84%      77.429ms       3.692us         20973  \nvoid cudnn::ops::nchwToNhwcKernel<float, float, floa...         0.00%       0.000us         0.00%       0.000us       0.000us      61.148ms        10.95%      61.148ms      17.561us          3482  \n                                  cudaFuncGetAttributes         1.69%      49.869ms         1.69%      49.869ms       0.764us      48.126ms         8.62%      48.172ms       0.738us         65232  \nvoid cudnn::ops::nhwcToNchwKernel<float, float, floa...         0.00%       0.000us         0.00%       0.000us       0.000us      21.417ms         3.83%      21.417ms      24.505us           874  \n                                        cudaMemcpyAsync         0.19%       5.515ms         0.19%       5.515ms       5.386us      21.227ms         3.80%      21.227ms      20.729us          1024  \n                                  FurthestPointSampling         0.02%     515.000us         0.03%     804.000us      44.667us      20.986ms         3.76%      21.196ms       1.178ms            18  \nvoid wgrad_alg0_engine<float, 128, 6, 7, 3, 3, 5, fa...         0.00%       0.000us         0.00%       0.000us       0.000us      20.531ms         3.68%      20.531ms     293.300us            70  \nvoid furthest_point_sampling_kernel<1024u>(int, int,...         0.00%       0.000us         0.00%       0.000us       0.000us      20.146ms         3.61%      20.146ms       2.878ms             7  \nvoid wgrad_alg0_engine<float, 512, 6, 5, 3, 3, 3, fa...         0.00%       0.000us         0.00%       0.000us       0.000us      19.479ms         3.49%      19.479ms     295.136us            66  \nvoid cutlass::Kernel<cutlass_80_tensorop_s1688gemm_6...         0.00%       0.000us         0.00%       0.000us       0.000us      19.170ms         3.43%      19.170ms     210.659us            91  \ncudaOccupancyMaxActiveBlocksPerMultiprocessorWithFla...         0.04%       1.090ms         0.04%       1.090ms       0.126us      17.439ms         3.12%      17.439ms       2.009us          8679  \nvoid cutlass::Kernel<cutlass_80_tensorop_s1688gemm_6...         0.00%       0.000us         0.00%       0.000us       0.000us      16.304ms         2.92%      16.304ms     232.914us            70  \nvoid cudnn::cnn::reduce_wgrad_nchw_helper<float, flo...         0.00%       0.000us         0.00%       0.000us       0.000us      14.728ms         2.64%      14.728ms      42.080us           350  \n                          MambaInnerFnNoOutProjBackward         0.48%      14.213ms         1.13%      33.199ms     461.097us      14.129ms         2.53%      23.773ms     330.181us            72  \n                                               aten::mm         0.29%       8.401ms         0.39%      11.642ms      17.966us      12.417ms         2.22%      39.003ms      60.190us           648  \n                                ampere_sgemm_128x128_tn         0.00%       0.000us         0.00%       0.000us       0.000us      11.244ms         2.01%      11.244ms     244.435us            46  \nvoid wgrad_alg0_engine<float, 128, 5, 5, 3, 3, 3, fa...         0.00%       0.000us         0.00%       0.000us       0.000us      10.332ms         1.85%      10.332ms     240.279us            43  \nvoid cutlass::Kernel<cutlass_80_tensorop_s1688gemm_6...         0.00%       0.000us         0.00%       0.000us       0.000us       9.268ms         1.66%       9.268ms      88.267us           105  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \nSelf CPU time total: 2.947s\nSelf CUDA time total: 558.611ms\n",
+    "cpu": "-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                                               backward        38.64%        1.139s        38.64%        1.139s     569.400ms       0.000us         0.00%       2.000us       1.000us             2  \n                             aten::convolution_backward        19.03%     560.934ms        32.14%     947.225ms       7.176ms     299.788ms        53.67%     368.635ms       2.793ms           132  \n                                aten::cudnn_convolution        11.04%     325.488ms        15.56%     458.624ms       3.474ms     103.592ms        18.54%     127.800ms     968.182us           132  \n                                  cudaDeviceSynchronize         7.19%     211.858ms         7.19%     211.858ms     102.297us       1.914ms         0.34%       1.914ms       0.924us          2071  \n                                             cudaMalloc         4.36%     128.580ms         4.36%     128.580ms     496.448us     295.000us         0.05%     298.000us       1.151us           259  \n                                               cudaFree         3.07%      90.408ms         3.07%      90.411ms     339.891us      42.000us         0.01%      50.000us       0.188us           266  \n                                    LayerNormFnBackward         2.71%      79.799ms         2.75%      80.923ms       2.248ms     289.000us         0.05%     474.000us      13.167us            36  \n                                       cudaLaunchKernel         2.21%      65.212ms         2.21%      65.227ms       3.110us      77.287ms        13.84%      77.429ms       3.692us         20973  \n                                  cudaFuncGetAttributes         1.69%      49.869ms         1.69%      49.869ms       0.764us      48.126ms         8.62%      48.172ms       0.738us         65232  \n                                  cudaStreamSynchronize         1.59%      46.752ms         1.59%      46.752ms     163.469us      76.000us         0.01%      76.000us       0.266us           286  \n                                          model_forward         1.27%      37.458ms        22.39%     659.915ms     329.957ms       0.000us         0.00%     288.523ms     144.262ms             2  \n                          MambaInnerFnNoOutProjBackward         0.48%      14.213ms         1.13%      33.199ms     461.097us      14.129ms         2.53%      23.773ms     330.181us            72  \n                                               aten::mm         0.29%       8.401ms         0.39%      11.642ms      17.966us      12.417ms         2.22%      39.003ms      60.190us           648  \n                                            aten::empty         0.25%       7.350ms         0.32%       9.548ms       2.221us       0.000us         0.00%       8.000us       0.002us          4299  \n                                            aten::copy_         0.23%       6.672ms         2.07%      61.086ms      19.750us       8.146ms         1.46%      31.562ms      10.204us          3093  \n                                  MambaInnerFnNoOutProj         0.21%       6.308ms         0.57%      16.753ms     232.681us       4.242ms         0.76%       6.255ms      86.875us            72  \n                                         cudaMemGetInfo         0.20%       5.750ms         0.20%       5.750ms      30.585us       8.263ms         1.48%       8.263ms      43.952us           188  \n                                        cudaMemcpyAsync         0.19%       5.515ms         0.19%       5.515ms       5.386us      21.227ms         3.80%      21.227ms      20.729us          1024  \n                                             aten::add_         0.18%       5.276ms         0.29%       8.524ms       4.851us       4.361ms         0.78%       9.618ms       5.474us          1757  \n                                 aten::cudnn_batch_norm         0.17%       5.025ms         0.27%       8.042ms      62.828us       3.482ms         0.62%       4.156ms      32.469us           128  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \nSelf CPU time total: 2.947s\nSelf CUDA time total: 558.611ms\n"
+  }
+}

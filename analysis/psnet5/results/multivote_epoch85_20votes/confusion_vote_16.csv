@@ -1,0 +1,6 @@
+ground_truth\prediction,ibeam,pipe,pump,rectangularbeam,tank
+ibeam,159545,919,0,314297,0
+pipe,105966,10294365,0,82727,35581
+pump,0,831903,0,10977,0
+rectangularbeam,954212,94,0,3185065,60674
+tank,253923,670,0,183627,1128161
